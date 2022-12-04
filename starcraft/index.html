@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Starcraft</title>
+
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <body>
+        <!--레이스 대신 가위, 클로킹 대신 카트 사진으로 대체-->
+        <img id="cloaking" class="c" src="discount2.PNG" alt="클로킹 버튼" />
+        <img id="wraith" class="w" src="cart2.PNG" alt="레이스" />
+
+        <!-- jQuery CDN 연결 -->
+        <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
+        <script>
+            $("#cloaking").click(function() {
+                $("#wraith").toggle();
+            })
+        </script>
+    </body>
+</html>
