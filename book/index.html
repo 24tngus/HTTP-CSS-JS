@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Book Search</title>
+    </head>
+
+    <body>
+        <h1>API 연습</h1>
+        <input id="search" type="text" />
+        <button id="submit">검색</button>
+        <!-- jQuery CDN 연결 -->
+        <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+        <script>
+         $("#submit").click(function() {
+            $.ajax({
+                method: "GET",
+                url: "https://dapi.kakao.com/v3/search/book?target=title&query=" + $("#search").val(),
+                headers: {Authorization: "KakaoAK 5f52bcaa1002258279070b9e8c07e46b"}
+            })
+        
+            .done(function(data) {
+                $("body").append("<span>" + data.documents[0].title + "</span>");
+                $("body").append("<img src=" + data.documents[0].thumbnail + "/>");
+            });
+         })
+        </script>
+        <!-- done은 요청 후 응답이 완료된 뒤 실행되는 함수 -->
+        <!-- console이 아닌 (제목, 섬네일) 웹 페이지에 표시-->
+
+    </body>
+</html>
+
+
