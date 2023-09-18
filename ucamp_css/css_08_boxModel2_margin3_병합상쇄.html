@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>margin:auto 실습</title>
+<style type="text/css">
+  /*
+  첫번째 박스에는 margin-bottom: 50px; 두번째 박스에는 margin-top: 100px;
+  두 박스 사이에는 50 + 100 = 150px의 margin이 적용 되어야 하지만, 
+  마진 병합 현상으로 인해 둘 중 더 큰 속성값인 100px로 병합 되었다.
+  */
+  div#a {
+    width: 300px;
+    height: 100px;
+    background-color: red;
+    margin: 50px;
+   }
+   div#b {
+    width: 300px;
+    height:100px;
+    background-color: powderblue;
+    margin: 100px;  
+   }
+</style>
+</head>
+<body>
+  <h2>상하 블럭간의 margin는 값이 큰 margin으로 적용됨</h2>
+  <div id="a">a</div>
+  <div id="b">b</div>
+</body>
+</html>
+

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>속성 선택자 실습</title>
+<style type="text/css">
+  /*
+  [속성명 |= "속성값"] 선택자는 언더바_ 및 공백이 없는 합성어는 선택할 수 없습니다.
+  */
+  div[class |='en']{
+    color:red;
+  }
+</style>
+</head>
+<body>
+    <div id="one">man-news</div>
+    <div class="en" >milk man</div>
+    <div class="kr en">letterman2</div>
+    <div class="kr">newmilk</div>
+    <div id="two" class="en-UK">superman</div>
+</body>
+</html>
+

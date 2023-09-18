@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>속성 선택자 실습</title>
+<style type="text/css">
+  /* 
+    "값"과 일치하는 속성값이 면 선택. 
+    속성값은 공백으로 구분한 여러 개의 속성값 들 중 1개가 될 수 있음
+  */
+  div[class ~='en']{
+    color:red;
+  }
+</style>
+</head>
+<body>
+    <div id="one">man-news</div>
+    <div class="en" >milk man</div>
+    <div class="kr en">letterman2</div>
+    <div class="kr">newmilk</div>
+    <div id="two" class="en-UK">superman</div>
+</body>
+</html>
+

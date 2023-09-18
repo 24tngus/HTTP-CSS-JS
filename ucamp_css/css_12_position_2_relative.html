@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>position relative 실습</title>
+    <style type="text/css">
+      /*
+      relative: 
+        relative로 설정하게 되면, 요소를 원래 위치에서 벗어나게 배치할 수 있게 됩니다. 
+        요소를 원래 위치를 기준으로 상대적(relative)으로 배치 해준다.
+        요소의 위치 지정은 top, bottom, left, right 속성을 이용해서 
+        요소가 원래 위치에 있을 때의 상하좌우로 부터 얼마나 떨어지게 할지를 지정할 수 있다.        
+      */
+      main {
+        width: 300px;
+        height: 400px;
+        background: tomato;
+      }
+
+      div {
+        width: 200px;
+        height: 100px;
+        border: 1px solid;
+        background: yellow;
+        text-align: center;
+        line-height: 100px;
+        box-sizing: border-box;
+      }
+
+      div:nth-of-type(2) {
+        position: relative;
+        top: 28px;
+        left: 48px;
+        background: cyan;
+        opacity: 0.8;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>position: relative;</h2>
+
+    <main>
+      <div>첫 번째 요소 static</div>
+      <div>두 번째 요소 relative</div>
+      <div>세 번째 요소 static</div>
+    </main>
+  </body>
+</html>
