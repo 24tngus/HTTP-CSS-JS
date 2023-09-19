@@ -7,17 +7,22 @@
 
 /* p:first-child {} : p 태그의 부모기준으로 첫 번째 p태그 반환. */
 
- p:first-child {
+/* 첫 번째는 모두 선택 */
+ p:first-child { 
 	color:red;
 }
+
+/* div p:first-child {
+	color:red;
+} */
 
 </style>
 </head>
 <body>
-<p>I am a strong man.</p>
-<p>I am a strong man.</p>
+<p>body의 첫번째 자식</p>
+<p>body의 두번째 자식</p>
 <div>
- <p>div의 첫자식</p>
+ <p>div의 첫번째 자식</p>
 </div>
 </body>
 </html>
