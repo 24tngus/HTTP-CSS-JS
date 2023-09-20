@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+      // 함수 선언식
+       function* a(){
+    	   console.log("1");
+       }
+       var x = a();  // x가 generator 객체이다.
+       console.log(typeof a);  // function
+       console.log(typeof x);  // object 
+       
+       // 함수 표현식
+       var b =  function* (){
+    	   console.log("1");
+       }
+       var x2 = b();
+       console.log(typeof b);  // function
+       console.log(typeof x2);  // object 
+       
+</script>
+</head>
+<body>
+
+</body>
+</html>

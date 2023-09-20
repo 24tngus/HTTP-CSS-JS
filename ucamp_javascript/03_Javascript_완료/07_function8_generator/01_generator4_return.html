@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+       function* a(k,k2){
+    	   console.log("1");
+    	   yield k+k2;
+    	   yield '홍길동';
+    	   console.log("end");
+       }
+       var x = a(10,20);  
+       console.log( x.next());  // {value: 30, done: false}
+       console.log(x.return()); // {value: undefined, done: true}
+       console.log(x.next());   // {value: undefined, done: true}
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

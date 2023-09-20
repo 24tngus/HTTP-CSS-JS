@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//sample6_IDCheck_Parent.html
+	var childWin;
+	function check(){
+		window.name = "parentForm";
+		childWin=window.open("sample6_IDCheck_Child.html","childForm","width=300,height=300");								
+	}
+	
+</script>
+</head>
+<body>
+<h1>parent창</h1>
+아이디:<input type="text" name="userid" id="userid"  readonly>
+<button onclick="check()">중복체크</button>
+</body>
+</html>
+
+
+

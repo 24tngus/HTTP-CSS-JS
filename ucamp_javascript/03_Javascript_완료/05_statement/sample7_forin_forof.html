@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	// forin을 이용한 배열 ==> index 반환
+	var myCars = [ "BMW", "Benz", "티코" ];
+
+	for ( var num4 in myCars) {
+		console.log("myCars  " + myCars[num4]); // 인덱스를 통해 값 가져옴
+	}
+
+	console.log('for-in');
+	for (let name of myCars) { // 값을 바로 가져옴
+		console.log(name);
+	}
+
+	// for in을 이용한 객체 ==> key 반환
+	var person = {
+		name : "홍길동",
+		age : "20",
+		address : "서울"
+	};
+
+	console.log('person.name = ' + person.name); // person.name = 홍길동
+	console.log('person[\'name\'] = ' + person['name']); // person['name'] = 홍길동
+	// back tick을 이용한 Template literals
+	console.log(`person.name = ${person.name}`); // person.name = 홍길동
+
+	console.log(`홍길동의 나이 + 20 = ${Number(person.age) + 20}`) // 홍길동의 나이 + 20 = 40
+
+	for ( var p in person) {
+		console.log("person 정보: " + p + " : " + person[p]);
+	}
+	////////////////////////////////////////////////////////
+	// for of을 이용한 배열 ==> value 반환,  객체반복은 불가
+	var myCars = [ "BMW2", "Benz2", "티코2" ];
+
+	for ( var num4 of myCars) {
+		console.log("myCars2  " + num4);
+	}
+
+	// Map 객체
+	const iterable = new Map([['A', 10], ['B', 20], ['C', 30]]);
+	for (const [key, value] of iterable) {
+	console.log(key + " -> " + value);
+	}
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+

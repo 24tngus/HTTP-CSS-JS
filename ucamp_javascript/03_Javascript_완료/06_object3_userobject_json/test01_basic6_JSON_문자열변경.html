@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        
+        // 10 -->"10"
+   var n = 10;
+   console.log(n + 10);
+   console.log(n.toString())
+
+   //"10" --> 10
+   var m ="10";
+   console.log(m+2);
+   console.log(parseInt(m)+2);
+   console.log(Number.parseInt(m)+2);
+   
+   //JSON객체
+   var n=[10,20,30];  // ==> "[10,20,30]"
+   var m = JSON.stringify(n); //[10] =>"[10]"
+   var m2 = JSON.parse(m);   // "[10]"-->[10]
+   console.log(m,m[0]);
+   console.log(m2,m2[0]);
+   
+   var n2 ={"name":"홍길동","age":20};
+   var k = JSON.stringify(n2); 
+   var k2 = JSON.parse(k);
+   console.log(k.name);
+   console.log(k2.name, k2["name"]);
+   
+       
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+    <button onclick="aaa()">OK1</button>
+	<button id="xxx">OK2</button>
+
+<script>
+	//var b = document.getElementById("xxx");
+	// DOM Level 0 방식중에 고전 방식 
+	document.getElementById("xxx").onclick=function(){
+		console.log("b");
+	};
+	
+	function aaa(){console.log("aaa");}
+</script>
+</body>
+</html>
+
+
+

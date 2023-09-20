@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+        // `` (backtick , 역따옴표)
+        let mesg =`hello`;
+        console.log("1:" , mesg );
+        
+        let mesg2 =`hello
+world`;
+        console.log("2:" , mesg2 );
+        
+        let a = '홍길동';
+        let b = `이순신`;
+        let result = `이름은 ${a}이고 별명은 ${b}이다`;
+        console.log("3:" , result);
+   
+        
+        let a2 = 10;
+        let b2 = 20;
+        console.log("4:" , `합계:${a2+b2}` );
+        
+        // 중첩 가능
+        let a3 = 10;
+        let b3 = 20;
+        console.log("5:" , `a3가 b3 보다 ${(a3>b3)?`크다`:`작다`}` );
+        
+        // back-tick 과 ""
+        var k = "asdfasdfasdfasdfasdfaasdfasd"
+                +"fsadfsadfsadfas";
+        console.log(k);
+        var k2 = `asdfasdfasdfasdfasdfaasdfasd
+        	     fsadfsadfsadfas`;
+        console.log(k2);
+</script>
+</head>
+<body>
+
+</body>
+</html>

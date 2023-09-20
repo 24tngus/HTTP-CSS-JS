@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function aaa() {
+		alert("aaa");
+	}
+	function bbb() {
+		var f = document.getElementById("myForm");
+		console.dir(f);
+		f.submit();
+
+	}
+	function ccc(n) {
+	  console.log(n);
+	  n.submit();
+	}
+</script>
+</head>
+<body>
+	<form name="xForm" id="myForm" action="target.html" onsubmit="aaa()">
+		아이디:<input type="text" name="userid"><br> 
+		<input type="submit" value="전송1">
+		<button>전송2</button>
+		<input type="button" value="전송3" onclick="bbb()"> 
+		<input type="button" value="전송4" onclick="ccc(xForm)">
+	</form>
+</body>
+</html>
+
+
+

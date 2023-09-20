@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+           console.log(this, window);
+
+           this.n=20;
+           // 익명 함수
+            var a = {
+            	n:10,
+            	b: function(){
+            		console.log(this.n); //10
+            	}
+            }
+           a.b();
+            
+            // arrow 함수
+            var a2 = {
+                	n:10,
+                	b:()=>{
+                		console.log(this.n); // 20
+                		console.log(n); // 20
+                	}
+                }   
+            a2.b();
+       
+</script>
+</head>
+<body>
+
+</body>
+</html>

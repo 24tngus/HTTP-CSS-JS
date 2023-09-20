@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+     class Employee{
+    	 constructor(name,salary){
+    		 console.log("Employee 생성자");
+    		 this.name = name;
+    		 this.salary = salary;
+    	 }
+    	 setName(name){
+    		 this.name = name;
+    	 }
+    	 setSalary(salary){
+    		 this.salary=salary;
+    	 }
+    	 getName(){
+    		 return this.name;
+    	 }
+    	 getSalary(){
+    		 return this.salary;
+    	 }
+     }
+     
+     class Manager extends Employee{
+    	/*  constructor(name,salary,depart){
+    		 
+    		 //super(name,salary);
+    		 this.depart = depart;
+    		 console.log("Manager 생성자");
+    	 } */
+    	 setDepart(depart){
+    		 this.depart=depart;
+    	 }
+    	 getDepart(){
+    		 return this.depart;
+    	 }
+     }
+     let man = new Manager("홍길동",2000,"관리");
+     console.log(man.getName(),man.getSalary(),man.getDepart());
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

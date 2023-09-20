@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+       //1. 함수 표현식 이용
+        var a = function(x){
+    	    console.log("a" + x);  
+         }
+       a(10);
+       
+       //arrow 표현식
+       var a2 = (x)=>{
+    	   console.log("a2"+x);  
+       };
+       a2(10);
+       // 파라미터가 한개이면 () 생략 가능.
+       var a3 = x =>{
+    	   console.log("a3"+x);  
+       };
+       a3(10);
+       
+       /////////////////////////////////
+       //2. 함수 표현식 이용
+        var k = function(x,y){
+    	    console.log("k" + x+"\t"+y);  
+         }
+       k(10,20);
+       
+       //람다
+       // 파라미터가 여러개인 경우에는 () 생략불가
+       var k2 = (x,y)=>{
+    	   console.log("k2" + x+"\t"+y); 
+       }
+       k2(10,20);
+       
+       
+</script>
+</head>
+<body>
+
+</body>
+</html>

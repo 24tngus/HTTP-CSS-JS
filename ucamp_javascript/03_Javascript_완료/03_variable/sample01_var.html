@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <script type="text/javascript">
+      //var 키워드
+      /*
+	  변수 선언시 사용하며 변수명 중복 사용 가능
+	  블록 스코프가 아닌 함수 스코프(function scope)를 따른다.
+	  호이스팅(hoisting) 되어 처리된다.
+
+	 */
+
+      //1. 변수명 중복 가능 (권장 안함)
+      var n = 10;
+      var n = 100;
+
+      //2. 함수 스코프
+      {
+        var n = 10;
+        console.log("블럭안에서 출력:" + n);
+      }
+      console.log("블럭밖에서 출력:" + n);
+
+      //함수
+      function aaa() {
+        var x = 100;
+        console.log("함수안:", x);
+      }
+      aaa();
+      console.log("함수밖:", x);
+      var x = 10;
+
+      //3. var 변수는 호이스팅(hoisting)된다.
+      //호이스팅 현상이란 js 해석기가 코드의 라인 순서와 관계 없이 함수 선언식과 var 변수를 위한 메모리 공간을 먼저 확보한다.
+
+      sum()
+	  function sum() {
+        var sum = 0;
+        for (var i = 1; i <= 5; i++) {
+          sum = sum + i;
+        }
+        console.log('sum() sum => ' + sum); //15
+        console.log('sum() i => ' + i);
+      }
+      //function statement (함수 선언문)
+      function willBeOveridden() {
+        return 10;
+      }
+      console.log('willBeOveridden() = ' + willBeOveridden()); //5
+      function willBeOveridden() {
+        return 5;
+      }
+
+      // 함수 표현식은 호이스팅 안됨 (함수 선언은 괜찮지만, 함수 선언식의 경우 정의 후 호출 필요)
+      var sum2 = function() {
+        console.log("함수 표현식");
+      }
+      sum2();
+      console.log(typeof(sum2)); // function
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+       
+       
+       //arrow 표현식 {}의미는 object 표기할 용도로 사용중.
+       var a = ()=>{};
+       console.log(a());  // undefined 인 이유는 object로 인식하지 않고 실행블럭으로 인식.
+       
+       // 실행블럭이 아닌 표현식으로 인식시키기 위해서 ({}) 형태로 사용해야 된다.
+       var a2 = ()=> ({ 'key':'홍길동'} );
+       console.log(a2());  // Object {key: "홍길동"}
+</script>
+</head>
+<body>
+
+</body>
+</html>

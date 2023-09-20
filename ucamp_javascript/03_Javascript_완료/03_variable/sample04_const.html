@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	    const mesg = "hello";
+	    try{
+	    	mesg = "world";
+	    }catch(e){
+	    	console.log("상수값 변경 불가");
+	    }
+        
+	    
+	    if(true){
+	    	const mesg2 = "world";  // let 변수와 같이 블럭 스코프 적용.
+	    }
+	    //console.log(mesg2); // Uncaught ReferenceError: mesg2 is not defined
+</script>
+</head>
+<body>
+
+</body>
+</html>

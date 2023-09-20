@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+        function aaa(txt,exp){
+        	console.log(txt, txt[0], exp , txt[1]);
+        }
+        aaa `hello`;
+        
+        function aaa2(txt,exp){
+        	console.log(txt, txt[0], exp , txt[1]);
+        }
+        let mesg = "홍길동";
+        aaa2 `world ${mesg}`;
+        
+        function aaa3(txt,exp){
+        	console.log(txt, txt[0], exp , txt[1]);
+        }
+        aaa3 `happy ${mesg} !!!`;
+        
+        
+        function aaa4(txt, exp , exp2){
+        	console.log(txt, txt[0], exp , txt[1] , exp2);
+        }
+        aaa4 `안녕하세요 ${mesg} !!! 건강하세요 ${mesg}`;
+        
+        
+</script>
+</head>
+<body>
+
+</body>
+</html>

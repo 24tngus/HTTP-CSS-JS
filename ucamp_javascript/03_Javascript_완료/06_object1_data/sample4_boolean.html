@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	
+  
+   /*
+      4. 논리 데이터 객체==> Boolean 클래스
+      
+      1) true/false
+      2) 다른 값도 논리값으로 처리가 된다.
+         명시적으로 다른값을 논리값으로 처리할 때 사용.
+        false로 처리하는 값
+        -""
+        - 0
+        - null
+        - undefined
+        - NaN
+   */
+   
+     var n = new Boolean(10);
+     console.log(n);  // Boolean > true
+     console.log(n.toString());  //  "true"
+     console.log(n.valueOf());   // true
+     
+     var n2 = new Boolean(0);
+     console.log(n2.toString());  //  "false"
+     console.log(n2.valueOf());  // false
+     
+     
+     if(n2.valueOf()){
+    	 console.log("AAAAAAAAA");
+     }
+   
+   
+   
+	    
+</script>
+</head>
+<body>
+<input type="text" >
+</body>
+</html>
+
+
+

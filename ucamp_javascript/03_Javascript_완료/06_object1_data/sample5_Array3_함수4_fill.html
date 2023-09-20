@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+       // fill(값, start, end ):index 범위의 값을 지정한 값으로 변경한다.
+
+       var arr =  [1,2,3,4,5];
+       let copyArr = arr.fill( 9 );
+       console.log(copyArr); // [9, 9, 9, 9, 9]
+
+       var arr2 =  [1,2,3,4,5];
+       let copyArr2 = arr2.fill( 9, 3 );
+       console.log(copyArr2); // [1, 2, 3, 9, 9]
+       
+       var arr3 =  [1,2,3,4,5];
+       let copyArr3 = arr3.fill( 9, 2, 4 );
+       console.log(copyArr3); // [1, 2, 9, 9, 5]
+       
+</script>
+</head>
+<body>
+
+</body> 
+</html>

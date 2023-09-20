@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	// spread 연산자:   ...배열|set|map
+	//iterable 객체이기 때문에 'spread 연산자'에 의해서 분리되어 전개가 가능하다.
+
+    //1. 초기화된 배열에 다른 배열 삽입 가능
+	let initialChars = ['A', 'B'];
+    console.log(initialChars.concat('E', 'F')); // 맨 끝에 이어붙임
+
+    let chars = [...initialChars, 'C', 'D']; // 배열 안의 값을 얻고자 할 때 사용 (... 없으면, 배열 + 'C','D')
+    console.log(chars); // ["A", "B", "C", "D"]
+
+    //2. 배열 연결
+    let numbers = [10, 20];
+    let moreNumbers = [30, 40];
+    let allNumbers = [...numbers, ...moreNumbers];
+
+    console.log(allNumbers); // [10, 20, 30, 40]
+
+    //3. 배열 복사
+    let scores = [80, 70, 90];
+
+    let copiedScores = [...scores]; // 알맞은 방식 (원본 유지)
+    copiedScores.push(200);
+    console.log("배열 복사본")
+    console.log(copiedScores); // [80, 70, 90, 200]
+    console.log("배열 원본")
+    console.log(scores);
+
+    let refCopyScores = scores; // 잘못된 방식 (원본이 변경됨)
+    refCopyScores.push(100);
+    console.log("배열 복사본")
+    console.log(refCopyScores);
+    console.log("배열 원본")
+    console.log(scores);
+
+    //4. 함수 파라미터
+	function xx(x,y,z){
+		console.log(x,y,z);
+	}
+	var k = [10,20,30]
+    xx(k);  // x ([10, 20, 30]) y(undefined) z(undefined)
+	xx(...k);
+	xx(...[10,20,30]);
+
+    //5. 문자열 전개
+    var x = [...'Hello'];
+    console.log(x);
+
+    // iterable 객체 확인 방법
+    var xx = [10,20]; // array
+    console.log(xx[Symbol.iterator]);  //function values() { [native code] }
+    var xx2 = {}; // object
+    console.log(xx2[Symbol.iterator]);   // undefined
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+

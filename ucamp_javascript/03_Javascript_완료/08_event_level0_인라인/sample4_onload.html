@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/*
+	    이벤트(event)
+	   1) 이벤트는 사용자 또는 시스템 발생시킨 사건.
+	   예> 버튼클릭, input태그에 값입력,....
+	==> 이벤트 감지방법 필요.
+	==> 리스너(listener)로 이벤트 발생을 감지한다.
+	==> 이벤트 종류?
+		   -click -----> onclick
+		   -change -----> onchange
+		   -focus
+		   -blur
+		   -keyup
+		   -keydown
+		   -mouseover
+		   -mouserout
+		   ...
+	
+	   2) 이벤트를 발생시킨 이유는 특별한 작업을 위함이다.
+	==> 특별한 작업은 함수로 표현
+	   
+	   3) 리스너와 함수 연결
+	      onclick="함수호출"
+	      
+	 * 이벤트(event) ==> 객체로 관리
+	    ==>Event 클래스 =====> new (자동) 시점: 이벤트가 발생하면 ..
+	    ==> 발생된 인스턴스를 참조
+	    
+	    Screen ==> screen
+	    Event ==> event
+	    
+	  4) 시스템이 발생시키는 이벤트
+	    load==> 메모리에 DOM 완성
+	        ==> onload 감지
+	    
+	 */
+
+	function kkk() {
+
+		var n = document.getElementById("xxx");
+		console.log(n);
+
+	}
+</script>
+</head>
+<body onload="kkk()">
+	<p id="xxx">Hello</p>
+
+</body>
+</html>
+
+
+

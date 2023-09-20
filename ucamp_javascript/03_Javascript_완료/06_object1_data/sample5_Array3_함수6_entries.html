@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+       var arr =  [10,20,30,40,50];
+       let x = arr.entries(); //generator 객체
+       console.log(x.next())  // [0, 10]
+       console.log(x.next())  // [1, 20]
+
+	console.log("", x);
+       for(var [key,value] of x){
+    	   console.log(key, value);
+       }
+       
+</script>
+</head>
+<body>
+
+</body> 
+</html>

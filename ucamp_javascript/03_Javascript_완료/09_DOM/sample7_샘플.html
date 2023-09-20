@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	// 자바스크립트 객체는 속성이나 메서드의 동적 추가
+	function aaa(n){
+		var price =document.getElementById("price").value;
+		var result = parseInt(price) * parseInt(n);
+		document.getElementById("result").innerText= result;
+		
+		//동적추가
+		window.xxxxxx="홍길동";
+		console.log(window.xxxxxx);
+	}
+	
+</script>
+</head>
+<body>
+  가격:<input type="text" id="price"><br>
+  갯수:
+  <select onchange="aaa(this.value)">
+    <option>5</option>
+    <option>10</option>
+    <option>15</option>
+  </select><br>
+  총합:<div id="result"></div>
+</body>
+</html>
+
+
+

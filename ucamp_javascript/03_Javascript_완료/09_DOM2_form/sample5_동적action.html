@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+    function aaa(f,a){
+    	//console.dir(f);
+    	//event.preventDefault();
+    	if(a=='del'){
+    		f.method="post";
+    		f.action="target.html";
+    	}else{
+    		f.method="post";
+    		f.action="target2.html";
+    	}
+    }
+</script>
+</head>
+<body>
+	<form name="xForm" id="myForm">
+		아이디:<input type="text" name="userid"><br>
+	   <input onclick="aaa(xForm,'del')" type="submit" value="삭제" >
+	   <input onclick="aaa(xForm,'insert')" type="submit" value="저장">
+	</form>
+</body>
+</html>
+
+
+

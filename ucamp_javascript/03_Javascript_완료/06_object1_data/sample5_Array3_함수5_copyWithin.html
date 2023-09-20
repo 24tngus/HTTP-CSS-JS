@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+       // arr.copyWithin(target, start, end)
+       // 배열안의 다른 위치에 배열값을 복사한다.
+       // target - (필수) 복사한 엘리먼트 붙여 넣을 위치의 인덱스
+       // start - (옵션) 복사를 시작할 위치의 인덱스 (default: 0)
+       // end - (옵션) 복사를 끝낼 위치의 인덱스 (default: arr.length)
+       var arr =  [1,2,3,4,5];
+       let copyArr = arr.copyWithin( 0 );
+       console.log("", copyArr); // [1, 2, 3, 4, 5]
+       
+       var arr =  [1,2,3,4,5];
+       let copyArr2 = arr.copyWithin( 0 , 3 );
+       console.log(copyArr2);   // [4, 5, 3, 4, 5]
+       
+       var arr =  [1,2,3,4,5];
+       //2번째 index부터 처음부터 끝까지 (default)의 엘리먼트를 복사합니다.
+       // 배열 길이를 넘어가는 부분은 무시됩니다.
+       let copyArr3 = arr.copyWithin( 2 );
+       console.log(copyArr3);   // [1, 2, 1, 2, 3]
+       
+       var arr =  [1,2,3,4,5];
+       let copyArr4 = arr.copyWithin( 1, 0, 3);
+       console.log(copyArr4);   // [1, 1, 2, 3, 5]
+       
+ 
+</script>
+</head>
+<body>
+
+</body>
+</html>

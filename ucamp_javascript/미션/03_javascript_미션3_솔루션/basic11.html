@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+    var sum = 0;
+    for(var i=1; i<=100; i++){
+       sum += i;
+    }
+    console.log("1 ~ 100까지의 총합: " + sum);
+
+    var sum2 = 0;
+    const arr = Array.from({length: 100}, (v, i) => i+1); // i(index) 1씩 증가
+    console.log(arr);
+    for(let val of arr){
+        //console.log(val);
+        sum2 += val;
+    }
+    console.log("1 ~ 100까지의 총합: " + sum2);
+    
+	
+    
+</script>
+</head>
+<body>
+
+</body>
+</html>

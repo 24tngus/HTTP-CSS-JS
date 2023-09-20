@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	/*
+	    함수 scope
+	*/
+	
+	var n=10; //전역변수
+	var k =function(){
+		console.log(xyz);//undefined,호이스팅
+		var xyz=200;//로컬변수
+		console.log(xyz,n);
+	}
+	
+	k();
+	console.log(n);
+	//console.log(xyz); //error
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+

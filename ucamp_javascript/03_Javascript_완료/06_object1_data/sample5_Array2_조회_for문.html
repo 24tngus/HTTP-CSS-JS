@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/*
+	   5. 배열 데이터 객체==> Array 클래스
+	   
+	   * JSON 배열 표기법 : []
+	    JSON 객체 표기법 : { key:value}
+	   
+	 
+	 */
+
+	var n = [10,20,30];  // JSON 배열 표기법
+	console.log(n);
+    console.log(n[0],n[1],n[2]);
+    console.log("배열길이:", n.length);
+    
+   
+    //반복문-for문
+    for(var i=0;i<n.length;i++){
+    	console.log('..',n[i]);
+    }
+    /*
+        for( 변수명 in 배열){
+        	인덱스 얻기
+        }
+        for( 변수명 of 배열){
+        	값 얻기
+        }
+    */
+    for(var i in n){
+      console.log("<<", i , n[i]);
+    }
+    
+    for(var i of n){
+        console.log("$$$", i );
+    }
+    
+	
+
+    
+    
+    
+	
+	
+</script>
+</head>
+<body>
+	<input type="text">
+</body>
+</html>
+
+
+

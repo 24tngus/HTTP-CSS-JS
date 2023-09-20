@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+  var httpRequest;
+	function req(){
+		httpRequest = new XMLHttpRequest();
+		//console.log(httpRequest)
+		
+		//요청시 응답데이터를 받아주는 코드
+		httpRequest.onreadystatechange=responseFun;
+		
+		//요청처리
+		//true:비동기 , false:동기
+		var url = "https://reqres.in/api/users/2";
+
+		httpRequest.open("get",url,true);
+		httpRequest.send(null); //get방식
+	}
+	function responseFun(){
+		// readyState==> 0 ~ 4까지
+		if(httpRequest.readyState==4 && httpRequest.status==200){
+			var str = httpRequest.responseText;
+			var obj = JSON.parse(str);
+			var id = obj.data.id;
+			var email = obj.data.email;
+			var first_name = obj.data.first_name;
+			var table = `
+			      <table border="1">
+                     <tr>
+                       <th>id</th>
+                       <th>email</th>
+                       <th>first_name</th>
+					 </tr>
+					 <tr>
+                        <td>${id}</td> 
+                        <td>${email}</td> 
+                        <td>${first_name}</td> 
+					 </tr>
+				  </table>
+			`;
+			document.getElementById("result").innerHTML=table;			
+		}//end if
+	}//end responseFun
+</script>
+</head>
+<body>
+<h1>Ajax실습</h1>
+<h2>https://reqres.in/api/users/2</h2>
+<button onclick="req()">요청</button>
+<div id="result"></div>
+</body>
+</html>
+
+
+

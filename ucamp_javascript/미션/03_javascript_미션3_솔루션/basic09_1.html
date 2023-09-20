@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+    var n = prompt("1.면접 점수값을 입력하시오.")
+	if (isNaN(n)) {
+        alert("입력한 면접 점수값이 숫자가 아닙니다!");
+	}	
+	
+	var n2 = prompt("2.영어 점수값을 입력하시오.")
+	if (isNaN(n2)) {
+        alert("입력한 영어 점수값이 숫자가 아닙니다!");
+	}
+
+	var mesg = "합격";
+    if( ( n + n2) / 2 < 80 ){
+    	mesg = "불합격";
+    }
+    n = parseInt(n);
+    n2 = parseInt(n2);
+
+	console.log("면접점수 값:" + n );
+	console.log("영어점수 값:" + n2 );
+	console.log("평균:" + (n+n2)/2 );
+	alert("합격여부:" + mesg );
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+  
+    // 데이터를 변수에 저장==> 저장하는 데이터를 쉽게 알수 있도록 지정권장
+
+    var name ="홍길동";
+    var age =20;
+    var height= 180.3;
+    var weight =67.5;
+    var isMarried = true;
+    var phone=["010","011"];
+    var email=["test@aa.net","test@gmail.com"];
+    var address = null;  // null은  값이 정해져 있지 않는 경우
+    ///address = "서울";
+    var pets={ "cat":"야옹이","dog":"멍멍이"};
+    
+    var my =function(){};
+
+    // 값은 변수이용해서...
+    console.log(name);
+    console.log(age);
+    
+    //변수에 실제저장된 데이터 종류 알아보기 
+    // typeof 변수명  ==> 결과를 문자열로 
+    console.log( typeof name); // "string" (문자열)
+    console.log( typeof age); // "number" (정수)
+    console.log( typeof height); // "number" (실수)
+    console.log( typeof isMarried); // "boolean" (논리값)
+    console.log( typeof phone); // "object" (배열)
+    console.log( typeof pets); // "object" (JSON객체)
+    console.log( typeof my); // "function" (함수)
+    console.log( typeof address); // "object" (null)
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+

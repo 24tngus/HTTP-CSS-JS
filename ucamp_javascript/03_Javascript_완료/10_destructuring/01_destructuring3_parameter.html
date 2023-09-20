@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+          //3. parameter destructuring
+          function a({x,y}){
+        	  console.log( x, y);
+          }
+          a({x:100,y:200});
+         
+          
+          function a2([x,y]){
+        	  console.log( x, y);
+          }
+          a2(['A','B']);
+          
+          //default value
+          function a3([x,y,z='hello']){
+        	  console.log( x, y, z);
+          }
+          a3(['A','B']);
+          
+          
+          function a4(x,y){
+        	  console.log(x,y);
+          }
+          a4([1,2]);
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/*
+	   5. 배열 데이터 객체==> Array 클래스
+	   
+	   * JSON 배열 표기법 : []
+	    JSON 객체 표기법 : { key:value}
+	   
+	 
+	 */
+
+	var n = [10,20,30];  // JSON 배열 표기법
+	console.log(n);
+    console.log("배열길이:", n.length);
+    
+    //1. 1번째 위치의 값변경: 10-->100
+    n[0]=100;
+    console.log(n);
+    
+    //2.값추가
+    n[3] = 90;
+    console.log(n);
+    
+    n.push(100); //권장
+    console.log(n);
+    
+    n.push(1,2,3); //한꺼번에 여러개 
+    console.log(n);
+    
+    //3. 값 삭제
+    console.log("삭제전:", n);
+    var x = n.pop();
+    console.log("삭제된 데이터:", x);
+    
+    
+    
+    
+    
+    
+	
+
+    
+    
+    
+	
+	
+</script>
+</head>
+<body>
+	<input type="text">
+</body>
+</html>
+
+
+

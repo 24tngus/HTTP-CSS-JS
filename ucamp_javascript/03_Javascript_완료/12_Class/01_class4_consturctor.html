@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+
+      class Person{
+
+          // 생성자 ( 클래스당 하나씩 )
+         constructor(name,age){
+        	 console.log("constructor(name,age)");
+        	 this.name = name;
+        	 this.age = age;
+         }
+    	  setName(name){
+    		  this.name = name;
+    	  }
+    	   setAge(age){
+    		  this.age = age;
+    	  }
+    	  
+    	  getName(){
+    		  return this.name;
+    	  }
+    	  getAge(){
+    		  return this.age;
+    	  }
+      }
+      
+      let p = new Person();
+      console.log(p.name , p.age);
+      console.log(p.getName(),p.getAge());
+      
+      let p2 = new Person("홍길동",20);
+      console.log(p2.name , p2.age);
+      console.log(p2.getName(),p2.getAge());
+</script>
+</head>
+<body>
+
+</body>
+</html>

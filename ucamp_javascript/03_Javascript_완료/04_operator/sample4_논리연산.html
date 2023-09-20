@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/*
+	    
+	 */
+
+	// 4. 논리 연산자:  &&(그리고,and)  ,  ||(또는,or)   , ! (부정)
+	/*
+	    ! 논리값 ==> 결과값 반대로
+	 */
+
+	console.log(!true);  // false
+	console.log(!false); // true
+    var x =true;
+    console.log(!x);  // false
+    
+	/*
+	    값  || 값 ==> 값이 반드시 논리값
+	 */
+
+	console.log(true || true); //true
+	console.log(true || false); //true
+	console.log(false || true); //true
+	console.log(false || false); //false
+
+	var n = 3;
+	console.log((n == 4) || (n > 30));
+
+	/*
+	    값  && 값 ==> 값이 반드시 논리값
+	 */
+
+	console.log(true && true); //true
+	console.log(true && false); //false
+	console.log(false && true); //false
+	console.log(false && false); //false
+
+	console.log(3 == 4 && 4 > 30 && 5 == 6);
+
+	var n = 3;
+	console.log((n == 4) && (n > 30));
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	/*
+	    일급객체
+	*/
+	
+	
+	//3.함수의 리턴값
+	var aaa= function(){
+		console.log("aaa함수");
+	};
+    var bbb= function(){
+		return aaa;
+	};
+	//중첩함수 
+	var ccc= function(){
+		return function(){
+			console.log("ccc함수");
+		};
+	};
+	var kkk =bbb();
+	kkk();
+	//ccc함수 출력하기
+	var xxx = ccc();
+	xxx();
+	ccc()();
+		
+	var n =function(){
+		console.log("n함수");
+	};
+	
+	//1 변수에 저장
+	var n2 = n;
+	n2();
+	
+	//2. 함수의파라미터값으로 
+	var k = function (){
+		console.log("k 함수");
+	}
+   var k2 =  function(n){
+		n();
+	}
+	
+   k2(k);
+   k2(function (){
+		console.log("kkkkk 함수");
+	});
+   
+   k2(function(){
+	   console.log("hello");
+   });
+   k2(function(){
+	   console.log("hello1");
+   },function(){
+	   console.log("hello2");
+   });	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	
+   // 특별한 함수 형태
+   /*
+     1.중첩함수
+     2.콜백함수
+     3.즉시호출함수:익명함수로 만든다.
+     
+     (function(){
+    	 console.log("hello");
+     })();
+   */
+	
+     //1. alert();
+     //2. prompt();
+     //3. parseInt();
+     
+     //4.  setInterval(함수,시간): 지정된 시간이 흐른뒤 반복적으로 함수 호출
+     setInterval(function(){
+    	 console.log("hello");
+     },3000);
+     
+   //5.  setTimeout(함수,시간): 지정된 시간이 흐른뒤 한번만 함수 호출
+     setTimeout(function(){
+    	 console.log("world");
+     },3000);
+     
+      var xxx = function(){
+        console.log("world");
+      };
+      setTimeout(xxx,3000);
+      
+      setTimeout(() => {
+      
+    }, milliseconds);	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+

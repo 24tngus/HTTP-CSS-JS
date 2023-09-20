@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+
+	// 4. 논리 연산자:  &&(그리고,and)  ,  ||(또는,or)   , ! (부정)
+	
+	/*
+	   1) 일반적인 프로그램언어의 문법
+	    논리값  || 논리값 ==> 값이 반드시 논리값
+	    
+	   2) 특별한 문법
+	    값1  논리연산자(&&,||) 값2 ==> 값1 또는 값2 반환
+	    
+	    
+	    값1  ||  값2 
+	     ==> 값1이 참이면 값1 반환하고
+	         값1이 거짓이면 값2을 반환한다. 
+
+	     값1  &&  값2 
+	     ==> 값1이 참이면 값2 반환하고
+	         값1이 거짓이면 값1을 반환한다. 
+
+			 
+			 
+	     다음의 5가지는 항상 논리값의 false로 처리한다.
+	     역으로 5가지가 아닌 것은 true로 처리한다.
+	     1) 0
+	     2) ""
+	     3) null
+	     4) undefined
+	     5) NaN
+	         
+	 */
+	 
+	 console.log(" || or 연산자 ")
+	 console.log( 10  ||  "유관순1"); // 10
+	 console.log( "aaa"  ||  "유관순2"); // "aaa"
+	 console.log( 4.25  ||  "유관순3"); // 4.25
+	 console.log( true  ||  "유관순4"); // true
+
+	 console.log(" || or 연산자 항상 false 비교")
+	 console.log( 0  || "광개토1"); // 광개토1
+	 console.log( ""  ||  "광개토2"); // "광개토2"
+	 console.log( null  ||  "광개토3"); // "광개토3"
+	 console.log( undefined  ||  "광개토4"); // "광개토4"
+	 console.log( NaN  ||  "광개토5"); // "광개토5"
+	 
+	 console.log(" && and 연산자 ")	 
+	 console.log( 10  &&  "이순신1"); // "이순신1"
+	 console.log( "aaa"  &&  "이순신2"); // "이순신2"
+	 console.log( 4.25  &&  "이순신3"); // "이순신3"
+	 console.log( true  &&  "이순신4"); // "이순신4"
+
+	 console.log(" && and 연산자 항상 false 비교")
+	 console.log( 0  &&  "홍길동1"); // 0
+	 console.log( ""  &&  "홍길동2"); // ""
+	 console.log( null  &&  "홍길동3"); // null
+	 console.log( undefined  &&  "홍길동4"); // undefined
+	 console.log( NaN  &&  "홍길동5"); // NaN
+
+	 
+	 
+	 
+	 
+	 
+	 
+	 console.log( 10  ||  "홍길동2"); // 10
+	 console.log( 0  ||  "홍길동2"); //"홍길동"
+	 
+	    function x(a){
+	  		var arr = a || [];
+	  		console.log(arr);
+	  	   }
+	      
+	      x();
+	      x([1,2]);
+	      
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+

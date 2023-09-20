@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+    
+    window.onload = function(){
+    	
+       /*
+          true로 지정하면 이벤트캡쳐링되기 때문에
+          부모인 a 가 먼저 출력되고 자식인 b 순서로 출력된다.
+
+          false로 지정하면 이벤트 버블링되기 때문에
+          자식인 b 가 먼저 출력되고 부모인 a 순서로 출력된다.
+       */
+
+    	 var a = document.getElementById('a');
+         a.addEventListener("click", function(){
+            console.log("a")
+         } , false);
+       
+         var b = document.getElementById('b');
+         b.addEventListener("click", function(){
+            console.log("b")
+         } , false);
+
+     };
+
+    function kkk(){
+    	 console.log("버튼클릭");
+    }
+</script>
+</head>
+<body>
+	<div id="a" style="background-color:#ff0000">
+        a
+       <div id="b" style="background-color:#00ff00">
+          b 
+       </div>
+     </div>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

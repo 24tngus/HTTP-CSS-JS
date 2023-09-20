@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <script type="text/javascript">
+      // let 키워드
+      /*
+	  var 키워드의 문제점 해결 목적으로 등장, 변수명 중복 사용 불가
+	  let 키워드를 사용하면 함수 스코프가 아닌 블록 스코프를 따른다.
+	  let 변수는 호이스팅(hoisting)되지 않는다.
+	 */
+      let a = 20;
+      // let a = 20;
+      //Uncaught SyntaxError: Identifier 'a' has already been declared
+
+      function sum() {
+        var sum = 0;
+        for (let i = 1; i <= 5; i++) {
+          sum = sum + i;
+        }
+        console.log("sum() sum => " + sum); //15
+        //console.log("sum() i => " + i);
+      }
+      sum();
+
+      function f() {
+        {
+          let x;
+          {
+            //새로운 블록 안에 새로운 x의 scope가 생김
+            const x = "sneaky";
+            x = "foo"; //위에 이미 const로 x를 선언했으므로 다시 값을 대입하면 Assignment to constant variable 에러 발생
+          }
+          //이전 블록 범위로 돌아왔기 때문에 'let x'에 해당하는 메모리에 값을 대입
+          x = "bar";
+          //let x = "inner"; //Uncaught SyntaxError: Identifier 'x' has already been declare
+        }
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

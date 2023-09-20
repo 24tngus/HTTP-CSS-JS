@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+	<button id="xxx">OK1</button>
+	<script type="text/javascript">
+	
+//callback 함수 대표적인 형태: 이벤트
+	   var kkk=function(event){
+			console.log("b",event.target);
+	   };
+ // DOM Level 2 방식 : addEventListener 메서드 사용 	   
+	var x = document.getElementById("xxx");
+	x.addEventListener("click",kkk,false);
+	
+
+</script>
+</body>
+</html>
+
+
+

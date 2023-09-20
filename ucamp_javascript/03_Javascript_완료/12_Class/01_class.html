@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+     //1. 클래스 선언식
+      class Person{
+    	  
+    	  // 자동으로 prototype에 메서드가 추가 된다.
+    	  // 따라서 Person.prototype.setName 형태로 연결된다.
+    	  // 즉, 자바스크립트의 기본 아키텍쳐는 유지하면서 객체지향 언어의 특징을 반영하려는 접근.
+    	  setName(name){
+    		 // console.log(this);
+    		  this.name = name;
+    	  }
+    	  setAge(age){
+    		  this.age = age;
+    	  }
+    	  getName(){
+    		  return this.name;
+    	  }
+    	  getAge(){
+    		  return this.age;
+    	  }
+      }
+      
+      let p = new Person();
+      p.setName("홍길동");
+      p.setAge(20);
+      console.log(p.name , p.age);
+      console.log(p.getName(),p.getAge());
+
+      console.log( typeof Person );  //function ==> class는 function 구조
+</script>
+</head>
+<body>
+
+</body>
+</html>

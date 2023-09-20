@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function aaa2() {
+	
+	var id = document.getElementById("userid").value;	
+	if(id.length == 0){	
+		return false;
+	}else{
+		return true;
+	}
+}//end aaa2
+	function aaa() {
+	
+	var id = document.getElementById("userid").value;	
+	var result = false;
+	if(id.length != 0){
+		result = true;
+	}
+	return result;
+}//end aaa
+	
+</script>
+</head>
+<body>
+	<form name="xForm" id="myForm" action="target.html"
+	   onsubmit="return aaa()">
+		아이디:<input type="text" name="userid"
+      id="userid"><br>
+	   <input type="submit" value="전송1">
+	</form>
+</body>
+</html>
+
+
+

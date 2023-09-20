@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+
+      //1. 클래스 선언식 ( setter /  getter  )
+      class Person{
+    	 set setName(name){
+    		  this.name = name;
+    	  }
+    	 set  setAge(age){
+    		  this.age = age;
+    	  }
+    	  
+    	 get getName(){
+    		  return this.name;
+    	  }
+    	 get getAge(){
+    		  return this.age;
+    	  }
+      }
+      
+      let p = new Person();
+      //p.setName("홍길동");
+      //p.setAge(20);
+      p.setName="홍길동";
+      p.setAge=20;
+      console.log(p.name , p.age);
+      console.log(p.getName,p.getAge);
+      
+       
+</script>
+</head>
+<body>
+
+</body>
+</html>

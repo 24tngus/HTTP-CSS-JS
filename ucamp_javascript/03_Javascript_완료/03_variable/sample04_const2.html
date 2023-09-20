@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	/*
+	const 키워드는 생성하는 변수가 읽기 전용임을 보장한다.
+	그러나 const 변수가 참조하는 실제 값이 불변이라는 의미는 아니다.
+	*/
+	const person = { age: 20 };
+	console.log(person.age); // 20
+
+	person.age = 30; // OK
+	console.log(person.age); // 30
+
+   //  person = { age: 40 }; // TypeError (Uncaught TypeError: Assignment to constant variable.)
+   person.age = 50;
+
+	// person 객체의 값 변경을 방지하려면 Object.freeze() 메서드 사용
+	const person2 = Object.freeze({age: 20}); // Uncaught SyntaxError: Identifier 'person' has already been declared
+	person2.age = 30; 
+	console.log(person2.age); // 20
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

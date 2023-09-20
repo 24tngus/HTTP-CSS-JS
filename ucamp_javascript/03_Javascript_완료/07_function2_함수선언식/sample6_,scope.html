@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	/*
+		var 변수는 함수 scope
+		let 변수는 블록 scope
+		 
+	*/
+	var n =100; //전역변수
+     function x(){
+		var m =10;  //로컬변수(지역변수)
+		console.log("함수안:",m, n)
+	}	
+	x();
+	console.log("함수밖:",m)
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	function aaa(x){
+		console.log(x);
+		var len = x.value.length;
+		document.getElementById("result").innerText=len;
+	}
+	
+</script>
+</head>
+<body>
+  값:<input type="text" id="v1" onkeyup="aaa(this, this.value)"><br>
+  결과값(입력한 문자열 갯수):<div id="result"></div>
+</body>
+</html>
+
+
+

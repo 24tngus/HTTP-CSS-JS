@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+  
+   /*
+      2. 수치데이터 객체==> Number 클래스
+   */
+	
+   var n = 10; //일반적인 방법
+   var n2 = new Number(10);
+   
+   console.log(n);
+   console.log(n2);
+   
+   // 10 -->"10" toString()
+   //"10" -->10  parseInt()
+   console.log("toString():" ,  n.toString()+2); // "10"
+   console.log("valueOf():" ,  n.valueOf()+2);   // 10
+   
+   //진법으로 출력
+   console.log("toString():" ,  n.toString()); //10진법
+   console.log("toString():" ,  n.toString(2)); //2진법
+   console.log("toString():" ,  n.toString(8)); //8진법
+   console.log("toString():" ,  n.toString(16)); //16진법
+   
+   // 소수점
+   var k = 15.764;
+   console.log("지정자릿수 표현,지정안하면 정수로" ,  k.toFixed()); // 16
+   console.log("지정자릿수 표현" ,  k.toFixed(2)); // 15.76
+   console.log("지정자릿수 표현" ,  k.toFixed(5)); // 15.76400
+   console.log(Number.MAX_VALUE);
+   
+   var x = Number.parseInt("10");
+   console.log(x);
+
+</script>
+</head>
+<body>
+<input type="text" >
+</body>
+</html>
+
+
+

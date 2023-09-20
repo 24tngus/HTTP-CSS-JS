@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+
+	//
+	console.log("10" * 2); //20
+	/*
+	      자바스크립트에서 같냐?
+	    1) == (equal 연산자) ,  !=
+	      : 값만 비교
+	    2) === (identical 연산자)  !==
+	      :값과 타입까지 비교
+	*/
+	console.log("10" == 10 ); //true,  "10"--> 10로 변환후 비교
+	console.log("10" === 10 ); //false, "10"--> 10로 변환 안하고 비교
+
+
+	// undefined 비교는 === 필수이다.
+	var x = undefined;
+	if(x == null){
+		console.log("== null"); // 실행
+	}
+	if(x === null){
+		console.log("=== null"); // 실행X
+	}
+	if(x == undefined){ 
+		console.log("=="); // 실행 (x값이 null이어도 실행됨.)
+	}
+	if(x === undefined){
+		console.log("==="); // 실행
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+

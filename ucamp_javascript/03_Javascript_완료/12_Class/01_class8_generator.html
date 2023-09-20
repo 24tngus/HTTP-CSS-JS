@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+     class Employee{
+    	 
+    	 * info(){
+    		 yield 'hello';
+    	 }
+     }
+
+      let emp = new Employee();   // 반드시 객체생성 필요
+      let gen = emp.info();       // 객체 생성후 메서드 호출하면 Generator 객체 반환 
+      
+      console.log(gen.next());     // next()  호출해야 수행
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

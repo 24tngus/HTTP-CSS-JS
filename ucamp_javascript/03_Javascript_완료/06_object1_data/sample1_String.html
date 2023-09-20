@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	
+  
+   /*
+      1. 문자열 객체==>  String 클래스
+   */
+	
+   var n = "hello";   
+   var n2 = new String("hello");
+   
+   console.log(n,n2);
+   
+   console.log("문자열 길이:", n.length );
+   var xxx = n.length;
+   console.log("문자열 길이:", xxx );
+   
+   console.log("특정문자 얻기:", n.charAt(0),n.charAt(3) );
+   var xxx = n.charAt(0);
+   console.log("특정문자 얻기:", xxx );
+   
+   // concatenation
+   console.log("문자열 연결:", n.concat("world") );
+   console.log("문자열 연결:", n.concat('world',"!!!") );
+   
+   console.log("위치값 얻기:", n.indexOf("e") );
+   console.log("위치값 얻기:", n.indexOf("x") );  // -1 이면 일치 X
+   
+   // substring(start위치, end위치) : end는 -1
+   console.log("부분열 얻기:", n.substring(0,3) ); //hel
+   console.log("부분열 얻기:", n.substring(1,5) ); //
+   
+   // substr(start위치,갯수)
+   console.log("부분열 얻기(substr):", n.substr(0,3) ); //
+   
+   console.log("대문자:", "hello".toUpperCase() ); //HELLO
+   console.log("소문자:", "WOrlD".toLowerCase() ); // world
+   
+   //구분자
+   var xxxx = "홍길동 이순신 유관순";
+   var xxxx = "홍길동,이순신,유관순"; //  csv (comma seperate value)포맷
+   var xxxx = "홍길동:이순신:유관순";
+   
+   var kkk = "홍길동/이순신/유관순";
+   var  kkk2 = kkk.split("/");  // kkk2가 배열명
+   console.log(kkk2[0], kkk2[1] , kkk2[2]);
+   
+   console.log("값 바꾸기:", "hello".replace('h','x') ); // xello
+   console.log("공백제거전:", "     hello    ".length ); // 10
+   var xxx = "     hello     ".trim();
+   console.log("공백제거후:", xxx.length ); //5 
+   console.log("공백제거후:", "     hello".trim().length ); //5 
+   console.log("체인형태:",
+		   "hello   ".replace('h','x').trim().substr(0,3) );
+   
+   
+</script>
+</head>
+<body>
+<input type="text" >
+</body>
+</html>
+
+
+

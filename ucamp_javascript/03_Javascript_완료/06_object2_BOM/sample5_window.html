@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//부모창 참조하는 방법; window
+	//자식창 참조하는 방법; 
+	console.dir(window);
+	var childWin;
+	function xxx(){
+		childWin= window.open("child.html",
+				"childName","width=200,height=200")
+	}
+	function xxx2(){
+		childWin.close();
+	}
+	function xxx3(){
+		window.close();
+	}
+</script>
+</head>
+<body>
+<button onclick="xxx()">새창</button>
+<button onclick="xxx2()">새창 닫기</button>
+<button onclick="xxx3()">창 닫기</button>
+</body>
+</html>
+
+
+

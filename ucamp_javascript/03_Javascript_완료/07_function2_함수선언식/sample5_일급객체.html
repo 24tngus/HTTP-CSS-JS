@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <script type="text/javascript">
+      /*
+		-일급객체(first-class)- 함수의 특징
+		1) 함수를 변수에 저장가능
+		2) 함수를 함수호출하는 call함수의 파라미터값으로 사용가능
+		3) 함수의 리턴값으로 함수 사용 가능
+	  */
+
+      /* 	  
+	   var k = 함수;
+	   function k2(변수){
+		  return 함수;
+	   }
+	   k2(함수) 
+	  */
+
+      function b() {
+        console.log("b함수");
+      }
+      function a() {
+        console.log(b);
+        return b;
+      }
+
+      var n = a();
+      n();
+    </script>
+  </head>
+  <body></body>
+</html>

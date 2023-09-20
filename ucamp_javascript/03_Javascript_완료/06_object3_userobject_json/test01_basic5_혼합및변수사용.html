@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        
+        // JSON 사용자 객체 생성
+     
+        //1. key값을 여러 문자열로 연결 가능
+        let mesg = { ["one"+"two"]: 100}
+        console.log(mesg,  mesg.onetwo);
+
+        //2. key값을 변수로 사용 가능
+        let xyz = "sport";
+        let mesg2 = {[xyz]:"축구", [xyz+"01"]:"야구"};
+        console.log(mesg2,  mesg2.sport, mesg2.sport01);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

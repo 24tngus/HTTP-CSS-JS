@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	
+	//DOM 처리==> html태그를 접근해서 가공(조회,수정,삭제,..)하고 싶다는 의미.
+    //1) 자바스크립트에서 HTML 접근 가능한지 확인=>HTML먼저 생성된후에 접근가능.
+     function init(){
+    	var x = document.getElementById("xxx");
+    	console.log(x); //x는 참조형변수, P객체타입저장변수
+    	console.dir(x); // log는html트리구조, dir는 JSON 트리구조
+    	//hello출력
+    	var m =  x.innerHTML;
+    	var m2 =  document.getElementById("xxx").innerHTML;
+    	console.log(x.innerHTML, x.innerText , m , m2);
+     }
+    
+</script>
+</head>
+<body onload="init()">
+  <p id="xxx">Hello</p>
+</body>
+</html>
+
+
+

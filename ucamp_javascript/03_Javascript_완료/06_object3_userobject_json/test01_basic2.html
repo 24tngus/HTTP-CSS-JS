@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        // JSON 사용자 객체 생성
+        var name = "홍길동2";
+
+        const person = {
+            name,    // name:name 동일
+            setName(n){this.name = n }, // function 키워드 skip 가능
+            getName(){return this.name}
+        };
+
+        console.log("이름:",  person.name)
+        person.setName("이순신2");
+        console.log("이름:",  person.getName())
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

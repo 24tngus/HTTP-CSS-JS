@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+ <script type="text/javascript">
+	
+    function check(){
+    	var m = document.querySelectorAll("input:checked");
+    	var mesg='';
+    	for(var n of m){
+    		mesg += n.value;
+    	}
+    document.getElementById("result").innerText=mesg;
+    }
+	
+</script>
+</head>
+<body>
+  <ul>
+   <li>
+   야구:<input type="checkbox" name="hobby" value="야구">
+   </li>
+   <li>
+   농구:<input type="checkbox" name="hobby" value="농구">
+   </li>
+   <li>
+   축구:<input type="checkbox" name="hobby" value="축구">
+   </li>
+  </ul>
+  <button onclick="check()">결과보기</button>
+  결과값합계:<div id="result"></div>
+
+</body>
+</html>
+
+
+

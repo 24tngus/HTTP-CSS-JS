@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/*
+	   2. BOM-Screen 객체
+	                      new
+	   Navigator 클래스 ------------->  인스턴스
+	   navigator : 인스턴스 참조
+	   
+	   ==> 브라우저 정보
+	   
+	 */
+	console.log(navigator);
+	console.log("appName:", navigator.appName);
+	console.log("version:", navigator.version);
+	console.log("cookieEnabled:", navigator.cookieEnabled);
+	console.log("language:", navigator.language);
+	console.log("onLine:", navigator.onLine);
+	console.log("userAgent:", navigator.userAgent);
+	console.log("userAgent2:", navigator["userAgent"]);
+
+	
+	// JSON 객체 표기법
+	var person={"username":"홍길동","age":20};
+	
+	console.log(person.username,person.age);
+	console.log(person["username"]); //연관 배열(중요)
+	
+	var kkkk ="username";
+	//console.log(person.kkkk);
+	console.log(person[kkkk]); //연관 배열(중요)
+	
+	
+</script>
+</head>
+<body>
+	<input type="text">
+</body>
+</html>
+
+
+

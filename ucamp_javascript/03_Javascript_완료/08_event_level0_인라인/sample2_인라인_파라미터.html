@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/*
+	    이벤트(event)
+	   1) 이벤트는 사용자가 발생시킨 사건.
+	   예> 버튼클릭, input태그에 값입력,....
+	==> 이벤트 감지방법 필요.
+	==> 리스너(listener)로 이벤트 발생을 감지한다.
+	==> 이벤트 종류?
+		   -click -----> onclick
+		   -change -----> onchange
+		   -focus
+		   -blur
+		   -keyup
+		   -keydown
+		   -mouseover
+		   -mouserout
+		   ...
+	
+	   2) 이벤트를 발생시킨 이유는 특별한 작업을 위함이다.
+	==> 특별한 작업은 함수로 표현
+	   
+	   3) 리스너와 함수 연결
+	      onclick="함수호출"
+	 */
+
+	function a(n) {
+		console.log("a",n)
+	}
+	function b(x) {
+		console.log("b",x)
+	}
+	function c(n,n2) {
+		console.log("c",n,n2);
+	}
+</script>
+</head>
+<body>
+
+	<button onclick="a(10)">OK</button><br>
+	<button onclick="b('홍길동')">OK2</button>
+	<button onclick="c('홍길동',20)">OK3</button>
+</body>
+</html>
+
+
+

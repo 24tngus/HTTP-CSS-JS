@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	//evenOdd 함수 만들기
+    function evenOdd2(n){
+		var mesg ="홀수";
+		if(n%2==0){
+			mesg ="짝수";
+		}
+		return mesg;
+	}
+	function evenOdd(n){
+		var mesg ="";
+		if(n%2==0){
+			mesg ="짝수";
+		}else{
+			mesg ="홀수";
+		}
+		return mesg;
+	}
+	
+	var n = evenOdd(10);
+	console.log(n);  //"짝수"
+	var n = evenOdd(9);
+	console.log(n);  //"홀수"
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+

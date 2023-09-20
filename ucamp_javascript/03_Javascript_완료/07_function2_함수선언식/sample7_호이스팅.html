@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	/*
+		var 변수는 호이스팅 가능
+		let 변수는 호이스팅 불가능
+	*/
+	
+	function x(){
+		console.log("x:",k); //undefined
+		var k=100;
+		console.log("x2:",k);  //100
+	}
+	x();
+	console.log(n); //undefined
+	var n =10;
+	console.log(n);  //10
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	//6. 증감연산자 (증가연산자:1씩증가 ,감소연산자:1씩감소)
+	
+	//주의할 점
+	// 전치: 먼저 증가하고 나중에 할당
+	// 후치: 먼저 할당하고 나중에 증가
+	var x = 10;
+	var x2 = x++;  // x++
+	console.log(x2,x)  //전치: 11 11  후치:10 11	
+	
+	var m =10;
+	//m = m-1; // m-=1
+	//--m;  //전치 연산자
+	m--;  //후치 연산자
+	console.log(m);	
+		
+	var n=10;
+	//n=n+1; //  n+=1
+    //n++; //후치 연산자
+	++n;  //전치 연산자
+	console.log(n);
+	
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <script type="text/javascript">
+      /*
+		-일급객체- 함수의 특징
+		1) 함수를 변수에 저장가능
+		2) 함수를 함수호출하는 call함수의 파라미터값으로 사용가능
+		
+	*/
+
+      function a(n) {
+        console.log(n);
+        n();
+      }
+      function b() {
+        console.log("b함수");
+      }
+      function c() {
+        console.log("c함수");
+      }
+      // a함수 호출 --->b함수 반응: 콜백함수(trigger 형태)
+      a(b);
+      a(c);
+
+      function x(n) {
+        console.log("x 함수", n);
+      }
+      var n = 10;
+      x(n);
+    </script>
+  </head>
+  <body></body>
+</html>

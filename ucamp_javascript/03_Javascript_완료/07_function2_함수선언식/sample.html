@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	/*
+		-함수 선언식
+		
+		function  함수명([변수,변수2,...]){
+		
+		 return [값]
+	    }
+	*/
+	x();   // x함수 파싱시점에 생성되기 때문에 함수선언전에 호출가능하다.
+	function x(){
+		console.log("x 함수");
+	}
+	x();
+	
+	var x = 10;
+	x(); // not a function
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+

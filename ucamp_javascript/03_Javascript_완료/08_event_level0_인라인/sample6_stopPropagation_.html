@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/*
+	     이벤트 전파 방지
+	    
+	 */
+  function a(){
+		console.log("a");
+	}
+  function b(){
+		console.log("b");
+		event.stopPropagation();  //이벤트 전파 방지 메서드
+	}
+</script>
+</head>
+<body>
+	<div id="a" onclick="a()" style="background-color:#ff0000">
+	   a
+	  <div id="b" onclick="b()" style="background-color:#00ff00">
+	 	b 
+	  </div>
+	</div>
+
+</body>
+</html>
+
+
+

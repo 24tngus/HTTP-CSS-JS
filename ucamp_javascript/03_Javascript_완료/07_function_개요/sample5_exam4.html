@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	//
+	function calc(n,n2,op){
+		var result=0;
+		switch(op){
+		case "+": result = n + n2; break;
+		case "-": result = n - n2; break;
+		case "*": result = n * n2; break;
+		case "/": result = n / n2; break;
+		}//end switch
+		return result;
+
+	}
+	
+	
+	var m = calc(10,20,"+");
+	console.log(m);//30
+	var m = calc(20,10,"-");
+	console.log(m);// 10
+	var m = calc(10,3,"*");
+	console.log(m);// 30
+	var m = calc(10,3,"/");
+	console.log(m);// 3.3333
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+

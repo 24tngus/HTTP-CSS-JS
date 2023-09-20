@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+      // 2. 클래스 표현식 ( 메서드명을 변수로 설정 가능)
+      let xxx = "setName";
+      class Person{
+    	  
+    	  [xxx](name){
+    		  this.name = name;
+    	  }
+    	   setAge(age){
+    		  this.age = age;
+    	  }
+    	  
+    	  getName(){
+    		  return this.name;
+    	  }
+    	  getAge(){
+    		  return this.age;
+    	  }
+      }
+      console.log(Person);
+      let p = new Person();
+      p.setName("홍길동");
+      p.setAge(20);
+      console.log(p.name , p.age);
+      console.log(p.getName(),p.getAge());
+      
+       
+</script>
+</head>
+<body>
+
+</body>
+</html>

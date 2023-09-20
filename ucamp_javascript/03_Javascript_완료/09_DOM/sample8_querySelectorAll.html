@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+  <ul>
+   <li>100</li>
+   <li>200</li>
+   <li>300</li>
+  </ul>
+  결과값합계:<div id="result"></div>
+ <script type="text/javascript">
+	
+    //document.querySelectAll("css선택자")
+	var lis = document.querySelectorAll("li");
+	var sum=0;
+	for(var n of lis){
+		sum+=parseInt(n.innerText);
+	}
+	document.getElementById("result").innerText= sum;
+</script>
+</body>
+</html>
+
+
+

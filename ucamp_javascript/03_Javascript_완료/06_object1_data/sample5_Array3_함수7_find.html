@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+       // arr.find(function(currentValue, index, arr),thisValue)
+	   // 배열에서 조건에 일치하는 값 반환. 일치하면 반복 중단됨.
+       var arr =  [10,20,30,40,50];
+       let xxx = arr.find(function(ele,idx, all){
+    	   console.log(ele,idx,all); 
+    	   return ele%20==0;
+       });
+	  console.log(xxx);
+	  
+	  //세번째 인자는 함수내에서 this 사용시 참조할 객체 지정.
+	  let xxx2 = arr.find(function(ele,idx, all){
+   	     console.log(ele,idx,all); 
+   	     return ele == this.mesg;
+      }, {mesg:30});
+	  console.log(xxx2);
+	  
+	  
+</script>
+</head>
+<body>
+
+</body> 
+</html>

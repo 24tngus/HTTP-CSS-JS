@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	// 기본형 변수 vs 참조형 변수
+	
+	function b(x){
+		x[0]=100;
+	}
+	var m =[10,20,30]; //참조형 변수
+	console.log("호출전:", JSON.stringify(m));//변경전 확인방법
+	console.log("호출전:"+m);//변경전 확인방법
+	b(m);
+	console.log("호출후:",m);
+	
+	
+	function a(x){
+		x =20;
+	}
+	var n =10; //기본형 변수
+	console.log("호출전:",n);
+	a(n);
+	console.log("호출후:",n);
+   
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+

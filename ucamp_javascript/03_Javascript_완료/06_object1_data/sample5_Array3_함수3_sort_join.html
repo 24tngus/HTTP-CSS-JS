@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/*
+	   5. 배열 데이터 객체==> Array 클래스
+	   
+	   * JSON 배열 표기법 : []
+	    JSON 객체 표기법 : { key:value}
+	   
+	 
+	 */
+
+	//var n = [93,5,6,22,4,1,100,46];  // JSON 배열 표기법
+	//
+	var n =[9, 4, 2, 1, 7, 8];
+    n.sort(); // 정렬된 새로운 배열이 생성안됨.원래 배열이 정렬됨.
+    console.log(n);  //오름차순(기본),내림차순은 명시적으로 구현
+
+    // 2자리 정수값 비교(X) ==> 문자(유니코드)로변경하고 비교
+    var n2 =[10,11,9,32,2,27,4,6];
+    n2.sort();
+    console.log(n2); // [10, 11, 2, 27, 32, 4, 6, 9]
+    
+    
+    //정렬함수 
+    var n3 =[10,11,9,32,2,27,4,6];
+    n3.sort(function(a,b){
+    	return a-b;
+    });
+	console.log(n3);//오름차순
+
+	var n4 =[10,11,9,32,2,27,4,6];
+	n4.sort(function(a,b){
+    	return b-a;
+    });
+	console.log(n4);//내림차순
+	
+	//join메서드
+	var xxx=["A","B","C"]
+	console.log("join:" ,  xxx.join(" and ")) // A and B and C
+	
+	
+</script>
+</head>
+<body>
+	<input type="text">
+</body>
+</html>
+
+
+

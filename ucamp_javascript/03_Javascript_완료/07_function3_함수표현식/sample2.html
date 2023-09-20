@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	/*
+		-함수표현식(익명함수)
+		
+		var 변수명= function ([변수,변수2,...]){
+		
+		 return [값]
+	    };
+	*/
+	var k =function(n,n2){
+		
+		return n+n2;
+	};
+	var k2 = k(10,20);
+	console.log(k2);
+		
+	var n = function(x,x2){
+		console.log("n 함수",x,x2)
+	};
+	
+	n(10,20);
+	n("홍길동",20);
+	n();
+	n("홍길동",20,"서울");
+		
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
