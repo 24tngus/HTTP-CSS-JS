@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <script type="text/javascript">
+      /*
+        생년월일 반환
+   */
+      function xyz(m) {
+        if (typeof m === "string") {
+          var x = m.substr(0, 6);
+          return x;
+        } else {
+          console.log("⛔️ the value is NOT of type string");
+        }
+      }
+
+      var birth = xyz("811025-1234567");
+      console.log("생년월일", birth);
+
+      console.log(xyz(811025));
+    </script>
+  </head>
+  <body></body>
+</html>

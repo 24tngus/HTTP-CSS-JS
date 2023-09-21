@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+   let xyz = function(str) {
+    let answer = "";
+    answer = answer.concat(str.toUpperCase(), " ", str.toLowerCase(), " ");
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] == str[i].toUpperCase())
+            answer = answer.concat(str[i].toLowerCase());
+        else
+            answer = answer.concat(str[i].toUpperCase());
+    }
+    return answer;
+   }
+
+   var data = xyz('AbCDeF');
+   console.log("데이터", data );
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

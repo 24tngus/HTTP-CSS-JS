@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+   
+   /*
+       대문자, 소문자 , 거꾸로 반환
+   */
+   function xyz(m){
+	  var upper = m.toUpperCase();
+	  var lower = m.toLowerCase();
+	  var kkk = '';
+	  for(var i=m.length-1; i >=0; i--){
+		  kkk = kkk+ m[i];
+	  }
+	  return upper+"\t"+lower+"\t"+kkk;
+   }   
+   var data = xyz('AbCDeF');
+   console.log("데이터", data );
+
+   //reverseString() 함수정의하고 호출
+   function xyz_reverse(m){
+	  var upper = m.toUpperCase();
+	  var lower = m.toLowerCase();
+      var rev_value = reverseString(m);
+	  return upper+"\t"+lower+"\t"+rev_value;
+   }
+   var data = xyz_reverse('Hello JavaScript');
+   console.log("데이터", data );
+
+   function reverseString(str) {
+    // 1. split() 메서드를 사용해 새 배열을 반환하기
+    var splitString = str.split(""); // var splitString = "hello".split("");
+    // ["h", "e", "l", "l", "o"]
+ 
+    // 2. reverse() 메서드를 사용해 새 배열의 순서를 뒤집기
+    var reverseArray = splitString.reverse(); // var reverseArray = ["h", "e", "l", "l", "o"].reverse();
+    // ["o", "l", "l", "e", "h"]
+ 
+    // 3. join() 메서드를 사용해 배열의 모든 요소를 문자열로 결합하기
+    var joinArray = reverseArray.join(""); // var joinArray = ["o", "l", "l", "e", "h"].join("");
+    // "olleh"
+    
+    // 4. 반전된 문자열을 반환하기
+    return joinArray; // "olleh"
+}
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

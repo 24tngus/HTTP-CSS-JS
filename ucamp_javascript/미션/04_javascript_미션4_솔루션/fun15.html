@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+   
+   /*
+      banana 글자포함하는 단어수 구하기
+   */
+   function bananaCheck(m){
+	//   console.log(">>1",m);
+	  var cnt = 0;
+	  for(var i=0 ; i < m.length; i++){
+		 if( m[i].includes("banana")){
+		 // if( m[i].toLowerCase().includes("banana")){
+			  cnt++;
+		  }
+	  }
+	  return cnt;
+   }
+   
+   var arr = ['BANANA','melon','banana','apple', 'banana','bananaa'];
+   var cnt = bananaCheck(arr);
+   console.log("banana 글자 포함 단어 갯수:", cnt );
+
+   let count = arr.filter(element => element.includes("banana")).length;
+   console.log("banana 글자 포함 단어 갯수 filter 사용 :", count );
+
+   let count2 = arr.reduce((cnt, element) => cnt + (element.includes("banana")), 0);
+   console.log("banana 글자 포함 단어 갯수 reduce 사용 :", count2 );
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

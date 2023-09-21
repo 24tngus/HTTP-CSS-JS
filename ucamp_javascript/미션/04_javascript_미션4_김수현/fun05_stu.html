@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+   let even = function() {
+    let answer = 0;
+    for(let i = 0; i < arguments.length; i++) {
+        if (arguments[i] % 2 === 0)
+        answer += arguments[i];
+    }
+    return answer;
+   }
+   var mesg = even(1,2,3,4,5);
+   console.log(mesg);
+</script>
+
+</head>
+<body>
+
+</body>
+</html>
