@@ -26,6 +26,24 @@
                 	}
                 }   
             a2.b();
+
+        //Arrow 함수의 this
+        // 일반 함수 this와 arrow 함수의 this는 다름
+        function BlackDog() {
+        this.name = '흰둥이';
+        return {
+            name:'검둥이',
+            bark() {
+            console.log(this.name + ' 멍멍!'); // 검둥이
+            },
+            bark2: () => {
+            console.log(this.name + ' 멍멍!'); // 흰둥이
+            } 
+        }; 
+        }
+        const blackDog = new BlackDog();
+        blackDog.bark(); // 검둥이 멍멍!
+        blackDog.bark2(); //흰둥이 멍멍!
        
 </script>
 </head>

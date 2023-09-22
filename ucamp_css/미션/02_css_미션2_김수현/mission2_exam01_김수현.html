@@ -5,14 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <style>
+      body {
+        background-image:url('main.jpg');
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-size: cover;
+        position : relative;
+      }
+      div {
+        font-family: 'MD솔체', sans-serif;
+        font-weight: bold;
+        font-size : xx-large;
+        color : white;
+        line-height: 2;
+        position : absolute;
+        top : 50px;
+        right : 150px;
+      }
+
+      /* 추가 input focus */
+      #input {
+        border : 2px solid;
+      }
+      #input:focus {
+        background-color: grey;
+      }
+
+      #button {
+        color : white;
+        background-color: #9acd32;
+        padding : 10px 15px;
+        border : none;
+        border-radius: 5%;
+      }
 
     </style>
     <title>Static Template</title>
   </head>
   <body>
    <div class="login">
+    LG Mall에 오신 것을 환영합니다. <br>
+    로그인하여 인증해주세요. <br>
 	<form id="loginForm" action="" method="post">
-	
+    <input id="input" type="text" name="input_id" required placeholder="아이디">
+    <input id="input" type="password" name="input_pw" required placeholder="패스워드">
+    <button id="button" type="login">로그인</button>
+    <button id="button" type="join">회원가입</button>
 	</form>
 </div>
   </body>

@@ -12,29 +12,95 @@
     />
     <title>Static Template</title>
 	<style>
- 
+    body {
+      background-color: black;
+    }
+    h1 {
+      background-color: rgba(45, 41, 41, 0.887);
+      color : gray;
+      padding : 10px;
+      text-align: center;
+    }
+
+    footer {
+      background-color: gray;
+      text-align: center;
+    }
+    .a {
+      color : black;
+      text-decoration-line: none;
+    }
+
+    #outer {
+      display : flex;
+      justify-content: space-around;
+    }
+    .box {
+      box-sizing: border-box;
+      clear:both;
+    	background-color: gray;
+      padding : 5px 30px;
+      text-decoration-line: none;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+    .container {
+      display:flex;
+      flex-direction: row;
+      margin-top: 10px;
+      content: "";
+      display: table;
+      clear: both;
+    }
+    .item {
+      color:black;
+      float : left;
+      width : 20%;
+      height: 11em;
+      padding: 20px;
+    }
+
+  @media screen and (max-width: 992px) {
+    .item {
+      width: 50%;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .item {
+      width: 100%;
+    }
+  } 
 	</style>
   </head>
- <body>
-  <header>
-    <h1>Document Heading</h1>
-  </header>
-  <main>
-    <article>
-      <h2>This is the heading of the main section</h2>
-      <p>This is a paragraph of text.</p>
-    </article>
-    <aside>Here is the aside</aside>
-  </main>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Blog</a>
-    <a href="#">Careers</a>
-    <a href="#">Contact Us</a>
-  </nav>
-  <footer>
-      <p>Copyright &#169; 2017 <a href="#">My Site</a></p>
-  </footer>
-</body>
-</html>
+  <body>
+    <header>
+      <h1>Document Heading</h1>
+    </header>
+    <nav>
+      <div id="outer">
+        <div class="box"><a class="a" href="#">Home</a></div>
+        <div class="box"><a class="a" href="#">About</a></div>
+        <div class="box"><a class="a" href="#">Blog</a></div>
+        <div class="box"><a class="a" href="#">Careers</a></div>
+        <div class="box"><a class="a" href="#">Contact Us</a></div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="item" style="background-color: gray;">
+        <article>
+          <h2>This is the heading of the main section</h2>
+          <p>This is a paragraph of text.</p>
+        </article>
+      </div>
+      <div class="item" style="background-color: white;">
+        <aside>Here is the aside</aside>
+      </div>
+    </div>
+    <footer>
+        <p>Copyright &#169; 2017 <a href="#">My Site</a></p>
+    </footer>
+  </body>
+  </html>
+  

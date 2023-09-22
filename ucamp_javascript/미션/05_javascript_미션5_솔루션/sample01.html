@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <script type="text/javascript">
+      function up() {
+		var quantityObj = document.getElementById("quantity");
+        var count = quantityObj.value;
+        quantityObj.value = parseInt(count) + 1;
+      }
+
+      function down() {
+        var quantityObj = document.getElementById("quantity");
+        var count = quantityObj.value;
+        if (count != 1) {
+			quantityObj.value = parseInt(count) - 1;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    갯수<input type="text" name="quantity" id="quantity" value="1" />
+    <button id="up" onclick="up()">+</button
+    ><button id="down" onclick="down()">-</button>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+   function checkpw() {
+    var pwd = document.getElementById("passwd").value;
+    var pwd1 = document.getElementById("passwd1").value;
+
+    if (pwd == pwd1) {
+        document.getElementById("result").innerText = "비밀번호 일치";
+        return false;
+    }
+    else {
+        document.getElementById("result").innerText = "비밀번호 불일치";
+        return true;
+    }
+   }
+
+</script>
+</head>
+<body>
+ 비밀번호 확인 구현<br>
+ 비밀번호<input onkeydwon="checkpw()" type="text" name="passwd" id="passwd"><br>
+ 비밀번호 재확인<input onkeydown="checkpw()" type="text" name="passwd1" id="passwd1" onkeyup="">
+ <span id='result'></span>
+</body>
+</html>

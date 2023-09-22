@@ -6,8 +6,12 @@
 <script type="text/javascript">
 function aaa2() {
 	
-	var id = document.getElementById("userid").value;	
-	if(id.length == 0){	
+	var userObject = document.getElementById("userid");
+	var userid = userObject.value;
+
+	if(userid.length == 0){
+		alert("아이디를 입력하세요");
+		userObject.focus();	
 		return false;
 	}else{
 		return true;

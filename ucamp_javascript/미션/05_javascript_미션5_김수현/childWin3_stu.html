@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+   function put1() {
+    opener.document.getElementById("post").value = "12345";
+    opener.document.getElementById("address").value = "서울시 강남구 XXX 아파트";
+    opener.document.getElementById("address1").value = "";
+   }
+
+   function put2() {
+    opener.document.getElementById("post").value = "99999";
+    opener.document.getElementById("address").value = "경기도 고양시 ZZZ 아파트";
+    opener.document.getElementById("address1").value = "";
+   }
+
+</script>
+</head>
+<body>
+  <table border="1">
+     <tr>
+      <th>우편번호</th>
+      <th>주소</th>
+    </tr>
+    <tr>
+      <td ><a onclick="put1()" href="">12345</a></td>
+      <td ">서울시 강남구 XXX 아파트</td>
+    </tr>
+    <tr>
+      <td ><a onclick="put2()" href="">99999</a></td>
+      <td >경기도 고양시 ZZZ 아파트</td>
+    </tr>
+  </table>
+ </body>
+</html>

@@ -11,13 +11,29 @@
      }  , false); */
     	
     	var xxx =	document.getElementById('xxx');
-         xxx.addEventListener("click", kkk , false);
+        //  xxx.addEventListener("click", kkk , false);
+         xxx.addEventListener("click", function() {
+            console.log("Button의 text = " + event.target.innerText)
+         }, false);
          
-         var myForm =	document.getElementById('myForm');
-         myForm.addEventListener("submit", function(e){
-        	 e.preventDefault();
-         } , false);
-     };
+         var myForm = document.getElementById("myForm");
+        myForm.addEventListener(
+          "submit",
+          function (e) {
+            e.preventDefault();
+            var userid = document.getElementsByName("userid")[0].value;
+            if(userid === ""){
+                alert("userid는 필수 입력항목입니다.");
+            }
+            var passwd = document.getElementsByName("passwd")[0].value;
+            if (passwd === "") {
+                alert("password는 필수 입력항목입니다.");
+            }
+            console.log(userid);
+          },
+          false
+        );
+      };
 
     function kkk(){
     	 console.log("버튼클릭");

@@ -9,9 +9,11 @@
         
         // JSON 사용자 객체 생성
         var name = "홍길동2";
+        var addrKey = "addr"; // key를 동적 변수로 만드는 방법
 
         const person = {
-            name,    // name:name 동일
+            name,    // name:name 동일 (value가 동적 변수)
+            [addrKey] : "서울", // (key가 동적 변수)
             setName(n){this.name = n }, // function 키워드 skip 가능
             getName(){return this.name}
         };
@@ -19,6 +21,7 @@
         console.log("이름:",  person.name)
         person.setName("이순신2");
         console.log("이름:",  person.getName())
+        console.log(person.addr);
 
     </script>
 </head>

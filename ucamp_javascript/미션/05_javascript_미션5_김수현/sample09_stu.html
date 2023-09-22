@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+    function selectAll(selectAll) {
+        const box = document.getElementsByName("lang");
+
+        box.forEach((checkbox) => {
+            checkbox.checked = selectAll.checked;
+        })
+    }
+</script>
+</head>
+<body>
+전체선택 <input onclick="selectAll(this)" type="checkbox" name="lang"><br>
+<input type="checkbox" name="lang">java<br>
+<input type="checkbox" name="lang">sql<br>
+<input type="checkbox" name="lang">angular<br>
+</body>
+</html>

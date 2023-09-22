@@ -7,15 +7,20 @@
 	
    //change 버튼클릭시 "Hello"==>"world"
     function fun(){
-	   var m = document.getElementById("xxx");
-	   m.innerHTML="<h1>World</h1>";
-	  //  m.innerText="<h1>World</h1>";
+	   var m = document.getElementById("title");
+	   m.innerHTML="<h1>World</h1>"; // world 출력
    }
+
+   // innerText로 동작
+  //  function fun(){
+	//    var m = document.getElementById("title");
+	//    m.innerText="<h1>World</h1>"; // <h1>World</h1> 출력
+  //  }
 </script>
 </head>
 <body>
-  <p id="xxx">Hello</p>
-  <button onclick="fun()">change</button>
+  <p id="title">Hello</p>
+  <button id="addBtn" onclick="fun()">change</button>
   
 </body>
 </html>

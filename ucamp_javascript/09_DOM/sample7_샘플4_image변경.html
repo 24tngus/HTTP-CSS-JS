@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+p<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -15,6 +15,7 @@
 		   i=0; //i=2;
 	   }
 	   g.src = img[i];
+	   imageFileName(img[i]);
 	}
 	function before() {
 		var g =document.getElementById("my");
@@ -23,6 +24,10 @@
 			i=2; // i=0;
 		}  
 		   g.src = img[i];
+		   imageFileName(img[i]);
+	}
+	function imageFileName(fileName) {
+		document.getElementById("image").innerText = fileName;
 	}
 </script>
 </head>
@@ -30,6 +35,7 @@
 	<img src="a.jpg" width="100" height="100" id="my">
 	<button onclick="next()">다음</button>
 	<button onclick="before()">이전</button>
+	<p id="image"></p>
 </body>
 </html>
 

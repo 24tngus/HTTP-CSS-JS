@@ -22,14 +22,18 @@
    //JSON객체
    var n=[10,20,30];  // ==> "[10,20,30]"
    var m = JSON.stringify(n); //[10] =>"[10]"
+   console.log(m,m[3]);
+
    var m2 = JSON.parse(m);   // "[10]"-->[10]
-   console.log(m,m[0]);
    console.log(m2,m2[0]);
    
    var n2 ={"name":"홍길동","age":20};
-   var k = JSON.stringify(n2); 
-   var k2 = JSON.parse(k);
-   console.log(k.name);
+   var k = JSON.stringify(n2);  // Object --> JSON 문자열
+   console.log(n2.name);
+   console.log(k.name); // Undefined
+   console.log(k);
+
+   var k2 = JSON.parse(k); // JSON 문자열 --> Object
    console.log(k2.name, k2["name"]);
    
        

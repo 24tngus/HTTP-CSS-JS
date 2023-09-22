@@ -10,24 +10,57 @@
         
         // JSON 사용자 객체 생성
         // set / get 지정하면 동일 메서드명으로 속성처럼 사용 가능
-        var name = "홍길동4";
+        // var name = "홍길동4";
 
         const person = {
-            name,    // name:name 동일,
+            name: "홍길동4",    // name:name 동일,
             phone:{
                 mobile:"010-1234-5678",
-                home:"02-9876-5432"
+                office:"02-9876-5432"
             },
             set username(n){this.name = n }, // function 키워드 skip 가능
-            get username(){return this.name}
+            get username(){return this.name},
+            getName() {
+                return this.name;
+            }
         };
 
         console.log("이름:",  person.name)
         person.username = "이순신4";
         console.log("이름:",  person.username)
-        console.log("전화번호:",  person.phone.mobile, person.phone.home)
+        console.log("전화번호:",  person.phone.mobile, person.phone.office)
 
+        const {name, phone:{mobile, office}, username, getName} = person;
+        console.log(`이름 = ${name}`);
+        console.log(`전화번호 = ${mobile}`);
+        console.log(`사무실 전화번호 = ${office}`);
+        //username = '영희';
+        console.log(`person username = ${username}`);
+        console.log(`person getname = ${getName()}`);
 
+        // 비구조화 할당 (Destructuring Assignment)
+        // var stuName = "김철수";
+        // var stuId = "123456";
+
+        const student = { // 객체 생성
+            stuName: "김철수",
+            stuId: "123456",
+            addr: {
+                home: '철수 집주소',
+                school: '철수 학교주소'
+            }
+        };
+        console.log(`학생이름 = ${student.stuName}`); // 1번
+        console.log(`학번 = ${student.stuId}`);
+        console.log(`집주소 = ${student.addr.home}`);
+        console.log(`학교주소 = ${student.addr.school}`);
+
+        // 1번을 구조 분해해서 표현 가능
+        const {stuName, stuId, addr:{home, school}} = student;
+        console.log(`학생이름 = ${stuName}`);
+        console.log(`학번 = ${stuId}`);
+        console.log(`집주소 = ${home}`);
+        console.log(`학교주소 = ${school}`);
 
     </script>
 </head>

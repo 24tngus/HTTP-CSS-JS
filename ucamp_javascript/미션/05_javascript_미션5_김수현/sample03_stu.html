@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+  function count() {
+    var inText = document.getElementById("cnttext").value;
+    let sum = 0;
+
+    for (let n of inText) {
+        for (let m of n) {
+            sum++;
+        }
+    }
+    document.getElementById("result").innerText = sum;
+  }
+
+
+</script>
+</head>
+<body>
+글자수 세기<br>
+<textarea onkeydown="count()" id="cnttext" rows="10" cols="10"></textarea><br>
+입력문자수:<span id="result"></span>
+</body>
+</html>

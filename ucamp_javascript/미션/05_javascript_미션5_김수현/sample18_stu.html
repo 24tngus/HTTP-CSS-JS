@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+   function save() {
+    var val = document.getElementById("v1").value;
+    document.getElementById("v1").value = null;
+    document.getElementById("result").innerText = document.getElementById("result").innerText + val + "\n";
+   }
+
+</script>
+</head>
+<body>
+ 값:<input type="search" name="v1" id="v1">
+ <button onClick="save()">저장</button><br>
+ 
+ <div id="result">
+ 
+ </div>
+
+</body>
+</html>

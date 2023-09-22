@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+     
+     function sumCount(n) {
+          let sum = 0;
+          for (let i=1; i <= parseInt(n); i++) {
+               sum += i;
+          }
+          document.getElementById("result").innerText = sum;
+     }
+     
+</script>
+</head>
+<body>
+<button onclick="sumCount(5)">5</button>
+<button onclick="sumCount(10)">10</button>
+<button onclick="sumCount(15)">15</button><br>
+총합:<span id="result"></span>
+</body>
+</html>

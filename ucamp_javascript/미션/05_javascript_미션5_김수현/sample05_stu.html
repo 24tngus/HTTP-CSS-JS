@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+  function print1() {
+    document.getElementById("result").innerHTML = "<h1>a.jpg</h1>";
+  }
+  function print2() {
+    document.getElementById("result").innerHTML = "<h1>b.jpg</h1>";
+  }
+  function print3() {
+    document.getElementById("result").innerHTML = "<h1>c.jpg</h1>";
+  }
+
+</script>
+</head>
+<body>
+이미지 이름 알아보기<br>
+<img onmouseover="print1()" src="a.jpg" width="100" height="100">
+<img onmouseover="print2()" src="b.jpg" width="100" height="100">
+<img onmouseover="print3()" src="c.jpg" width="100" height="100"><br>
+파일명:<span id="result"></span>
+</body>
+</html>
