@@ -13,7 +13,7 @@
         $("div").find("span").css("border", "1px solid red");
 
         //2. children - 자식만 반환
-        $("div").children("span").css("color", "orange");
+        $("div").children("span").css("color", "orange"); // 1st, 3rd
 
         //3. content() - text 포함한 모든 자손요소 반환
         var s = $("div").find("span").contents();
@@ -22,7 +22,7 @@
         });
 
         //4.  부모 및 조상
-        $("p:first").parent().css({ border: "2px solid red" }); // 부모
+        $("p:first").parent().css({ border: "2px solid red" }); // 부모 (p:first = div)
 
         var parentEls = $("b")
           .parents()
@@ -60,5 +60,6 @@
         </span>
       </p>
     </div>
+    <span>this is 마지막 p</span>
   </body>
 </html>

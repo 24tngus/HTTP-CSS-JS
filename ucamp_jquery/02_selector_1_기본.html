@@ -9,20 +9,20 @@
   $(document).ready(function(){
 	 
 	  //1. 모든 a태그
-	  $("a").css('color','red');
+	  //  $("a").css('color','red');
 	  
 	  //2. id가 x 
-	  //$("#x").css('color','blue');
+	  $("#x").css({'color':'blue', 'background-color' : 'orange', 'font-size' : '25px'});
 	  
 	  //3. class가 y 
-	  //$(".y").css('color','green');
+	  $("span.y").css('color','green');
 	  
 	  //4. 속성이 target 
-		$("[class]").css('color','orange'); 
-		// $("[class='y']").css('color','pink'); 
-		// $("p[class='y']").css('color','aqua'); 
-		// $("a[href^='https:']").css('color','lime'); 
-		// $("a[href$='com']").css('color','gold');
+		// $("[class]").css('color','orange'); // class 있음 
+		// $("[class='y']").css('color','pink');  // 클래스가 y
+		// $("p[class='y']").css('color','aqua'); // p태그의 클래스가 y
+		// $("a[href^='https:']").css('color','lime'); // 시작하는
+		// $("a[href$='com']").css('color','gold'); // 끝나는
 
   });
 
@@ -36,6 +36,7 @@
     <a href="https://google.com" class="z">google</a><br/>
     <p>
       <a href="#" id="x">자손</a>
+      <span class="y">P아래의 Span</span>
     </p>
     <p>
       <span><a href="xxx">자손2</a></span>

@@ -16,21 +16,24 @@
 
 		//2. end()
 		$("li").eq(2).css("color","lime")
-		      .end()
+		      .end() // eq(2) 설정 후 다시 (li)로 돌아가 (eq3) 설정하기 위해 
 			   .eq(3).css("font-size","25px");
 
 
 	   // 3. p태그를 찾고 다시 class값이 .middle 찾기
 	   $("p").filter(".middle").css("color","green");
-
+	   // console.log(result);
+	   if (result) {
+		$("#result").html("<h2>p 태그가 있습니다</h2>");
+	   }
 	         
 	   // 2. p태그를 찾고 다시 class값이 .middle 이 아닌 요소 
 	   $("p").not(".middle").css("color","blue"); 
 	         
 	   
 	   //3. * 태그를 찾고 다시 속성이 class인 요소가 p태그인지 ..
-	    var result = $("*").filter("[class]").is("p")
-	    console.log(result);
+	    // var result = $("*").filter("[class]").is("p")
+	    // console.log(result);
 
 	    //4. li태그를 찾고 span태그를 가지고 있는 요소     
 	    $("li").has("span").css("border", "2px solid red");
@@ -40,14 +43,24 @@
 			return index % 2 == 0;
 		 }).css({"color":"orange","backgroundColor":"blue"});  
 
-		 //6. map 가공 
-	     var arr = $("li").map(function(idx,ele){
-			 return $(this).text().toUpperCase();
+		//6. map 가공 
+	     var arr = $("li").map(function(idx,ele){ // ele가 li를 상징
+			 return $(this).text().toUpperCase(); // this는 li를 의미 (this = li = ele)
 		 });
 		 console.log(arr);
 
-		 //7. 부분 요소 
-	     $("li").slice(7).css("background-color","yellow");  
+		 arr.each(function(idx, ele){
+			console.log(ele.text);
+			$("#orderList").append(ele + "<br>");
+		 });
+
+		 arr.each(function(idx, ele) {
+			console.log(ele);
+			$("#orderList").append(`<li>${ele}</li>`); // "li" : li 선택자 선택, <li> : li 선택자 생성
+		 });
+
+		//7. 부분 요소 
+	     $("ol li").slice(7).css("background-color","yellow");  
   });
 
 </script>
@@ -56,7 +69,7 @@
 <p>text</p>
 <p class="middle">Middle <span>text</span></p>
 <p class="final">final text</p>
-
+<div id="result"></div>
 <div>
 		<ul>
 			<li>list item 1</li>
@@ -69,6 +82,7 @@
 			<li>list item 8</li>
 			<li>list item 9</li>
 		</ul>
+		<ol id="orderList"></ol>
 </div>
 </body>
 </html>

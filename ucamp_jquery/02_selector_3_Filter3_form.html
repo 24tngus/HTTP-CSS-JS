@@ -10,12 +10,12 @@
         var a = $(":button").css("color", "red");
         //console.log(a);
 
-        // :checkbox
+        // :checkbox (체크박스 선택))
         var b = $(":checkbox[id='secondCheck']").prop("checked", false);;
         //console.log(b);
 
         // :text
-        var c = $(":text:first").css("background","pink");
+        var c = $(":text:first").css("background","pink"); // first, child만 있음 (ntn 혹은 eq를 이용해 중간단계 선택)
         //console.log(c);
 
         // :disabled  :enabled
@@ -29,8 +29,11 @@
         var checkedLen = $("input:checkbox:checked").length;
         console.log(checkedLen);
 
-        var x = $("option:nth-child(2)").text("20").attr('selected','selected');
-
+        var x = $("option:nth-child(2)")
+                  .text("이십")
+                  .val("200")
+                  .attr('selected','selected');
+        console.log($("option:eq(2)").val());
       });
     </script>
   </head>

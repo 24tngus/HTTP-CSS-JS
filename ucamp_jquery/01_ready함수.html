@@ -6,6 +6,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <script>
 
+  //$(document).ready()
   $(document).ready(function(){
 	    console.log("ready"); 
   });
@@ -17,6 +18,14 @@
   $(function(){
     console.log('축약형 ready');
   });
+
+  // onload는 1번만 가능 (onload2만 표출)
+  window.onload = function() {
+    console.log("window.onload1");
+  }
+  window.onload = function() {
+    console.log("window.onload2");
+  }
 </script>
 </head>
 <body>

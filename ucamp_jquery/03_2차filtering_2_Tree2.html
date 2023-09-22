@@ -9,19 +9,19 @@
   $(document).ready(function(){
 	
 	 //1. 다음 형제 - selector가 생략되면 바로 다음 형제 참조
-	 //$("li").next().css("color","red");
+	//  $("li").next().css("color","red"); // B, C, D, E
 	 
 	 //2. 다음 형제 - selector가 지정되면 일치하는 다음 형제 참조
-	 //$("li").next(".selected").css("font-size","30px");
+	 //$("li").next(".selected").css("font-size","30px"); // B
 	 
 	 //3. 이전 형제 - selector가 생략되면 바로 이전 형제 참조
-	 //$("li").prev().css("background-color","yellow");
+	 //$("li").prev().css("background-color","yellow"); // A, B, C, D
 
 	 //4. 이전 형제 - selector가 지정되면 일치하는 다음 형제 참조
-	 //$("li").prev(".selected").css("font-size","30px");
+	//  $("li").prev(".selected").css("font-size","30px"); // B
 
 	 //5. 위/아래 형제 
-	 //$("li.xxx").siblings().css("background-color","blue");
+	 $("li.xxx").siblings().css("background-color","blue"); // A, B, C, E
 
   });
 

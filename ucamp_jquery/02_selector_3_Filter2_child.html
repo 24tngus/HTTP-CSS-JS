@@ -11,25 +11,25 @@
 		   nth-child는 부모의 n번째 위치에 있는 태그를 선택한다.
 		   따라서 5번째 요소를 nth-child로 선택하려면 p:nth-child(5)
 		*/
-		$(".box > p:nth-child(5)").css("color","pink")
+		// $(".box > p:nth-child(5)").css("color","pink") // 세번째 P
 
 		/*
 		  nth-of-type은 부모태그안의 다른 태그와는 상관없이 해당 태그만을 순서에 포함해서 n번째로 있는 태그를 선택한다.
 		*/
-		//$(".box > p:nth-of-type(3)").css("color","blue")
+		$(".box > p:nth-of-type(3)").css("color","blue") // 세번째 P
 		
 	    // li의 부모요소 기준으로 첫번쨰 및 마지막 자식
-	    // $("li:first-child").css("color","red")
-	    // $("li:last-child").css("color","blue")
+	    $("li:first-child").css("color","red") // a
+	    $("li:last-child").css("color","blue") // f
 	    
 	    // li의 부모요소 기준으로 3번쨰 자식 (1부터 시작)
-	    //$("li:nth-child(3)").css("color","red")
+	    // $("li:nth-child(3)").css("color","red") //c
 	    
 	    // li의 부모요소 기준으로 짝수번쨰 자식 ( 1부터 시작)
-	    //$("li:nth-child(2n)").css("color","red")
+	    // $("li:nth-child(2n)").css("color","red")
 	    
 	    // td의 부모요소 기준으로 only 자식 
-	    // $("td:only-child").css("color","red")
+	    $("td:only-child").css("color","red") // 11
   });
 
 </script>

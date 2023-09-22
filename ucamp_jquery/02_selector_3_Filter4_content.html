@@ -10,14 +10,19 @@
 	
      //1. :contains(text)
      $("div:contains('John')").css("color", "blue");
+
+    //  var filteredDivs = $("div:contains('john')").filter(function() {
+    //   var reg = new RegExp(txtsearch, "i");
+    //   return reg.test($(this).text());
+    //  })
      
      //2. :has(selector)
      $("div:has('p')").css("font-size", "30px");
 
-     //3. :empty
+     //3. :empty (<td></td>)
      $("td:empty").text("빈문자열").css("background-color","yellow");
 
-     //4. :parent
+     //4. :parent (<tr>)
      $("td:parent").css("color","red");
   });
 
@@ -32,7 +37,10 @@
   </div>
 
   <table border="1">
-    <tr><td>TD #0</td><td></td></tr>
+    <tr>
+      <td>TD #0</td>
+      <td></td>  
+    </tr>
     <tr><td>TD #2</td><td></td></tr>
     <tr><td></td><td>TD#5</td></tr>
   </table>

@@ -9,21 +9,21 @@
   $(document).ready(function(){
 	 
 	  //1. li중에서 2번째 위치 ( 0부터 시작하고 음수 가능)
-	//   $("li:eq(1)").css("color","red");  
-	//   $("li:eq(-1)").css("color","pink");  //뒤에서 첫번째 항목
-	//   $("li:gt(2)").css("color","aqua");  
-	//   $("li:lt(2)").css("color","orange");  
+	//   $("li:eq(1)").css("color","red");  // (b)
+	//   $("li:eq(-1)").css("color","pink");  //뒤에서 첫번째 항목 (f)
+	//   $("li:gt(2)").css("color","aqua");  // 숫자보다 큰 것 (d, e, f)
+	//   $("li:lt(2)").css("color","orange");  // 숫자보다 작은 것 (a, b)
 	  
-	  //2. li중에서 짝수 및 홀수 index 위치 
+	  //2. li중에서 짝수 및 홀수 index 위치 (index는 0부터 시작)
 	//   $("li:even").css("color","red");
 	//   $("li:odd").css("color","blue");
 	  
 	  //3. tr중에서 첫번째 위치 ( 0부터 시작하고 음수 가능)
-	//   $("tr:first").css("color","lime");  //  tr:eq(0) 동일
-	//   $("tr:last").css("color","orange");
-
+	//   $("tr:first").css("color","lime");  //  tr:eq(0) 동일, 첫번째 줄
+	//   $("tr:last").css("color","orange"); // 마지막 줄
 
 	  // 4. 현재 포커스 받은 요소
+	  // $(selector(선택자)).on('click', function(){})
 	   $("input").on("click", function(){
             $("input:focus").css("background-color","red");
             $("input:not(:focus)").removeAttr("style");
