@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <style type="text/css">
+      .important {
+        font-weight: bold;
+        font-size: xx-large;
+      }
+      .blue {
+        color: blue;
+      }
+    </style>
+    <script>
+      /* 
+      태그의 CSS를 조작하기 위한 메소드이다.
+      ● addClass()
+      선택한 태그에 하나이상의 class을 추가한다.
+      ● removeClass()
+      선택한 태그로부터 하나 이상의 class을 제거한다.
+      ● toggleClass()
+      선택한 태그로부터 add/remove class을 토글한다.
+      ● css()
+      스타일 속성을 set/return 한다. 
+      */
+
+      $(document).ready(function () {
+        $("#large").on("click", function () {
+          $("p, h2").addClass("important blue");
+        });
+        $("#normal").on("click", function () {
+          $("p, h2").removeClass("important blue");
+        });
+
+        //toggle
+
+        $("#toggle").on("click", function () {
+          $("p, h2").toggleClass("important blue");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Heading</h1>
+    <h2>Heading2</h2>
+    <p>이것은 중요한 내용이다.</p>
+    <button id="large">크게보기</button><br />
+    <button id="normal">보통</button>
+    <hr />
+    <button id="toggle">toggle</button>
+    <hr />
+  </body>
+</html>

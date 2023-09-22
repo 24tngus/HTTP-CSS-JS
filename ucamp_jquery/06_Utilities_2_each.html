@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+<script>
+  $(document).ready(function(){
+	
+	  var sum = 0;
+	  $("li").each(function(idx  , ele){
+		     console.log(idx, ele.innerText);
+		     console.log(idx, $(ele).text());
+		     console.log($(this).text());
+		     
+		     sum = sum + Number.parseInt($(this).text());
+       });
+	  
+	  $("#result").text(sum);
+	  
+  });
+
+</script>
+</head>
+<body>
+<ul>
+	<li>100</li>
+	<li>200</li>
+	<li>300</li>
+	<li>400</li>
+	<li>500</li>
+</ul>
+합계:<div id="result"></div>
+</body>
+</html> 

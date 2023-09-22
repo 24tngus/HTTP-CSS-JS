@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+<script>
+  $(document).ready(function(){
+	
+	$("#req").on( "click" , function(){
+		var url = "https://reqres.in/api/users";
+    		$.ajax({
+    			type: "get",
+    			url: url,
+    			data: {
+    				page: 2
+    			},
+    			dataType: "text",
+    			success: function( responseData, status , xhr ){
+    				
+    				$("#result").text( responseData);
+    			},
+    			error:function(xhr, status , error){
+    				
+    			}
+    		})
+    	});
+	    
+  });
+
+</script>
+</head>
+<body>
+<button id="req">요청</button>
+<div id="result"></div>
+</body>
+</html> 

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+      /* 특정 태그에 새로운 content를 설정하는 방법이다.
+
+● append() , appendTo()
+선택한 태그 자식 끝에 content를 삽입한다.
+● prepend()
+선택한 태그 자식 처음에 content를 삽입한다.
+● after()
+선택한 태그의 다음에 content를 삽입한다.
+● before()
+선택한 태그의 전에 content를 삽입한다.
+*/
+      $(document).ready(function () {
+        $("#result").css({ border: "2px solid red" });
+        $("#append").on("click", function () {
+          $("#result").append("<h1>홍길동</h1>");
+        });
+        $("#prepend").on("click", function () {
+          $("#result").prepend("<h1>이순신</h1>");
+        });
+        $("#before").on("click", function () {
+          $("#result").before("<h1>유관순</h1>");
+        });
+        $("#after").on("click", function () {
+          $("#result").after("<h1>홍범도</h1>");
+        });
+
+        $("#replaceWith").on("click", function () {
+          $("#result p").replaceWith("<h3>강감찬</h3>");
+        });
+
+        $("#remove").on("click", function () {
+          $("#result p:first").remove(); // #result p에 해당하는 요소인 자신 삭제
+        });
+        $("#empty").on("click", function () {
+          $("#result p:nth-child(2)").empty(); // #result에 해당하는 요소의 내용(하위) 삭제
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="result">
+      <p>Hello</p>
+	  <p>World</p>
+    </div>
+    <button id="append">append</button><br />
+    <button id="prepend">prepend</button><br />
+    <button id="before">before</button><br />
+    <button id="after">after</button><br />
+    <button id="replaceWith">replaceWith</button><br />
+    <button id="remove">remove</button><br />
+    <button id="empty">empty</button><br />
+    <hr />
+  </body>
+</html>

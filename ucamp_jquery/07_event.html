@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script>
+
+  $(document).ready(function(){
+	 	
+	    //1. button 이벤트
+	    $("#ok").on("click  mouseover",function(){
+	      console.dir(event.target);
+	      console.dir(this);
+	      console.dir($(this));
+	      console.dir($(this).text());
+	    });
+	
+	    $("#txtInput").on("keyup", function(e) {
+	    	console.log($(this).val());
+		});
+	    
+
+    	$("#hover").hover(function(){
+    		console.log("mouseenter");
+    	},function(){
+    		console.log("mouseleave");
+    	});
+		
+	  //2. change 이벤트
+		$("select").on("change", function(){
+			console.log("select 선택!!" + $(":selected").text());
+			console.log("select 선택!!" + $(this).val());
+		});
+	  
+	  //3.checkbox 선택
+	    $("#checkbox").on("change", function(){
+	    	console.log(this.checked);
+	    });
+	  
+	  //4. submit 이벤트
+		 $("form").on("submit", function(){
+			 if($("#userid").val().length==0){
+			 	event.preventDefault();  
+				alert("아이디는 필수 항목입니다.");
+				$("#userid").focus(); 
+			 }
+		 }); 
+  });
+
+</script>
+</head>
+<body>
+<button id="ok">OK</button><br>
+text:<input type="text" id="txtInput" /> <br>
+<button id="hover">hover</button><br>
+<form action="http://www.google.com">
+아이디<input type="text" name="userid" id="userid"><br>
+비밀번호<input type="text" name="passwd"><br>
+<select name="fruit">
+ <option value="사과">사과</option>
+ <option value="바나나">바나나</option>
+ <option value="수박">수박</option>
+</select><br>
+ 사과<input type="checkbox" name="checkbox" id="checkbox" checked>
+<input type="submit" value="전송">
+</form>
+</body>
+</html>

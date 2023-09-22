@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script>
+
+  $(document).ready(function(){
+	
+	 //1. 다음 형제 - selector가 생략되면 바로 다음 형제 참조
+	 //$("li").next().css("color","red");
+	 
+	 //2. 다음 형제 - selector가 지정되면 일치하는 다음 형제 참조
+	 //$("li").next(".selected").css("font-size","30px");
+	 
+	 //3. 이전 형제 - selector가 생략되면 바로 이전 형제 참조
+	 //$("li").prev().css("background-color","yellow");
+
+	 //4. 이전 형제 - selector가 지정되면 일치하는 다음 형제 참조
+	 //$("li").prev(".selected").css("font-size","30px");
+
+	 //5. 위/아래 형제 
+	 //$("li.xxx").siblings().css("background-color","blue");
+
+  });
+
+</script>
+</head>
+<body>
+  <ul>
+	<li>A</li>
+	<li class="selected">B</li>
+	<li>C</li>
+	<li class="xxx">D</li>
+	<li>E</li>
+  </ul>
+</body>
+</html>

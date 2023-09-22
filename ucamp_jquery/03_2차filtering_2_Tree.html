@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // find는 선택된 요소에서 selector와 일치하는 하위요소를 반환 (자손포함)
+        // children()는 자식까지만 반환
+
+        //1. find- 자식 및 자손 포함하여 반환
+        $("div").find("span").css("border", "1px solid red");
+
+        //2. children - 자식만 반환
+        $("div").children("span").css("color", "orange");
+
+        //3. content() - text 포함한 모든 자손요소 반환
+        var s = $("div").find("span").contents();
+        s.each(function (index, item) {
+          console.log($(item).text());
+        });
+
+        //4.  부모 및 조상
+        $("p:first").parent().css({ border: "2px solid red" }); // 부모
+
+        var parentEls = $("b")
+          .parents()
+          .map(function () {
+            return this.tagName;
+          })
+          .get() //선택한 요소를 배열로 가져오는 메서드
+          .join(", ");
+        $("b").append("<strong>" + parentEls + "</strong>");
+
+      });
+    </script>
+  </head>
+  <body>
+    <div>
+      <span>this is 1st p</span>
+    </div>
+
+    <div>
+      <div>
+        <p>
+          <span>this is 2nd p</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="myClass">
+      <span>this is 3rd p</span>
+    </div>
+
+    <div>
+      <p>
+        <span>
+          <b>My parents are: </b>
+        </span>
+      </p>
+    </div>
+  </body>
+</html>

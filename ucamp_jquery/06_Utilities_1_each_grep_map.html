@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+<script>
+  $(document).ready(function(){
+	
+	    var months = [ 'January', 'February', 'March', 'April', 'May',
+			'June', 'July', 'August', 'September', 'October',
+			'November', 'December' ];
+    	
+	    //1. each : 단순 반복 처리
+    	$.each( months , function(idx,value){
+    		console.log(idx+ "  " + value);
+    	});
+	    
+    	//2. grep : 필터링 처리
+    	var months2 = $.grep(months, function(value, i) {
+			return (value.indexOf('J') == 0);
+		});
+	    console.log(months2);
+	  
+	  //3. map : 가공 처리
+	    var months3 = $.map(months, function(value, i) {
+			return value.substring(0,3);
+		});
+	    console.log(months3);
+	    
+  });
+
+</script>
+</head>
+<body>
+
+</body>
+</html> 

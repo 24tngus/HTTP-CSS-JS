@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#get").on("click", function () {
+          var m = $("p").text();
+          var m2 = $("p").html();
+          var m3 = $("#addr1").val();
+          var m4 = $("a").attr("href");
+
+          console.log(m);
+          console.log(m2);
+          console.log(m3);
+          console.log(m4);
+        });
+
+        $("#set").on("click", function () {
+          //$("p").text("<span>Hello</span>");
+          $("p").html("<i>Hello JS</i>");
+          $("#addr2").val($("#addr1").val());
+          $("a").attr("href", "http://www.daum.net");
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <button id="get">출력</button>
+    <button id="set">설정</button>
+    <hr />
+    <p>Hello <em>world</em>!!!</p>
+    주소:<input type="text" name="userid" id="addr1" /><br />
+    배송주소<input type="text" name="passwd" id="addr2" /><br />
+    <a href="http://www.google.com">link</a>
+    <div id="result"></div>
+  </body>
+</html>

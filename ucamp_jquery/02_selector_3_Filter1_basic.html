@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script>
+
+  $(document).ready(function(){
+	 
+	  //1. li중에서 2번째 위치 ( 0부터 시작하고 음수 가능)
+	//   $("li:eq(1)").css("color","red");  
+	//   $("li:eq(-1)").css("color","pink");  //뒤에서 첫번째 항목
+	//   $("li:gt(2)").css("color","aqua");  
+	//   $("li:lt(2)").css("color","orange");  
+	  
+	  //2. li중에서 짝수 및 홀수 index 위치 
+	//   $("li:even").css("color","red");
+	//   $("li:odd").css("color","blue");
+	  
+	  //3. tr중에서 첫번째 위치 ( 0부터 시작하고 음수 가능)
+	//   $("tr:first").css("color","lime");  //  tr:eq(0) 동일
+	//   $("tr:last").css("color","orange");
+
+
+	  // 4. 현재 포커스 받은 요소
+	   $("input").on("click", function(){
+            $("input:focus").css("background-color","red");
+            $("input:not(:focus)").removeAttr("style");
+	   });
+
+	  //5. li중에서 c값 포함 
+	  $("li:contains('c')").css({"font-size":"20px", "background":"pink"});
+	  
+  });
+
+</script>
+</head>
+<body>
+<input type="text" value="one">
+<input type="text" value="two">
+<input type="text" value="three">
+<ol>
+	<li>a</li>
+	<li>b</li>
+	<li>c</li>
+	<li>d</li>
+	<li>e</li>
+	<li>f</li>
+</ol>
+<table border="1">
+			<tr>
+				<td>#1</td>
+				<td>#2</td>
+				<td>#3</td>
+				<td>#4</td>
+				<td>#5</td>
+			</tr>
+			<tr>
+				<td>#6</td>
+				<td>#7</td>
+				<td>#8</td>
+				<td>#9</td>
+				<td>#10</td>
+			</tr>
+			<tr>
+				<td>#11</td>
+				<td>#12</td>
+				<td>#13</td>
+				<td>#14</td>
+				<td>#15</td>
+			</tr>
+</table>			
+</body>
+</html>

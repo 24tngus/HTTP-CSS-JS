@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // :button
+        var a = $(":button").css("color", "red");
+        //console.log(a);
+
+        // :checkbox
+        var b = $(":checkbox[id='secondCheck']").prop("checked", false);;
+        //console.log(b);
+
+        // :text
+        var c = $(":text:first").css("background","pink");
+        //console.log(c);
+
+        // :disabled  :enabled
+        var e = $(":disabled").css("background","lime");
+        //console.log(e);
+
+        // :image
+        // :selected
+        // :hidden , :radio , :submit
+
+        var checkedLen = $("input:checkbox:checked").length;
+        console.log(checkedLen);
+
+        var x = $("option:nth-child(2)").text("20").attr('selected','selected');
+
+      });
+    </script>
+  </head>
+  <body>
+    <button>버튼1</button>
+    <h3>Form</h3>
+    <form>
+      <button>버튼2</button><br/>
+      <input type="text" name="firstInput" /><br/>
+      <input type="text" name="secondInput" disabled="disabled" /><br/>
+      <input type="checkbox" name="firstCheck" value="xxx" checked />첫번째
+      <input type="checkbox" name="secondCheck" value="xxx2" checked id="secondCheck" />두번째
+      <br/>
+      <select>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+    </form>
+  </body>
+</html>

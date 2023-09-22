@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script>
+
+  $(document).ready(function(){
+	 	
+	  $("button").on("click",function(){
+     	 $("div").html("<button id='ok'>OK</button>");
+     });
+  
+     //동적으로 생성된 태그 이벤트 추가
+     $("body").on("click", "#ok" , function(){
+     	console.log("ok");
+     });
+  });
+
+</script>
+</head>
+<body>
+ <button>new버튼</button>
+ <div></div>
+</body>
+</html>

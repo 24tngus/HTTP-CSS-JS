@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script>
+
+  $(document).ready(function(){
+	
+     //1. :contains(text)
+     $("div:contains('John')").css("color", "blue");
+     
+     //2. :has(selector)
+     $("div:has('p')").css("font-size", "30px");
+
+     //3. :empty
+     $("td:empty").text("빈문자열").css("background-color","yellow");
+
+     //4. :parent
+     $("td:parent").css("color","red");
+  });
+
+</script>
+</head>
+<body>
+  <div>John Resig</div>
+  <div>George Martin</div>
+  <div>Malcom john Sinclair</div>
+  <div>
+    <p>Hi John Resig</p>
+  </div>
+
+  <table border="1">
+    <tr><td>TD #0</td><td></td></tr>
+    <tr><td>TD #2</td><td></td></tr>
+    <tr><td></td><td>TD#5</td></tr>
+  </table>
+</body>
+</html>

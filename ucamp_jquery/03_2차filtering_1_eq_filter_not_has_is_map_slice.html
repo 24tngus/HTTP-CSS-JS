@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script>
+
+  $(document).ready(function(){
+	 
+	   // 1차 selector에 의해서 검색되 요소를 2차 필터링하는 방법
+	   // end() 사용하여 다시 1차 selector 참조 가능
+	   
+	    //1. $(selector).eq(idx)
+		 $("li").eq(0).css("color","red");
+
+		//2. end()
+		$("li").eq(2).css("color","lime")
+		      .end()
+			   .eq(3).css("font-size","25px");
+
+
+	   // 3. p태그를 찾고 다시 class값이 .middle 찾기
+	   $("p").filter(".middle").css("color","green");
+
+	         
+	   // 2. p태그를 찾고 다시 class값이 .middle 이 아닌 요소 
+	   $("p").not(".middle").css("color","blue"); 
+	         
+	   
+	   //3. * 태그를 찾고 다시 속성이 class인 요소가 p태그인지 ..
+	    var result = $("*").filter("[class]").is("p")
+	    console.log(result);
+
+	    //4. li태그를 찾고 span태그를 가지고 있는 요소     
+	    $("li").has("span").css("border", "2px solid red");
+
+		//5. li태그를 찾고, 3의 배수  
+	     $("li").filter(function(index){
+			return index % 2 == 0;
+		 }).css({"color":"orange","backgroundColor":"blue"});  
+
+		 //6. map 가공 
+	     var arr = $("li").map(function(idx,ele){
+			 return $(this).text().toUpperCase();
+		 });
+		 console.log(arr);
+
+		 //7. 부분 요소 
+	     $("li").slice(7).css("background-color","yellow");  
+  });
+
+</script>
+</head>
+<body>
+<p>text</p>
+<p class="middle">Middle <span>text</span></p>
+<p class="final">final text</p>
+
+<div>
+		<ul>
+			<li>list item 1</li>
+			<li>list item 2</li>
+			<li><span>list item 3</span></li>
+			<li>list item 4</li>
+			<li>list item 5</li>
+			<li>list item 6</li>
+			<li>list item 7</li>
+			<li>list item 8</li>
+			<li>list item 9</li>
+		</ul>
+</div>
+</body>
+</html>
