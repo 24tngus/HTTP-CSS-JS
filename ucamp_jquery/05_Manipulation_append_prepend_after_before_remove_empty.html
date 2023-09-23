@@ -19,6 +19,7 @@
       $(document).ready(function () {
         $("#result").css({ border: "2px solid red" });
         $("#append").on("click", function () {
+          // $(부모선택자).append(자식선택자)
           $("#result").append("<h1>홍길동</h1>");
         });
         $("#prepend").on("click", function () {
@@ -41,6 +42,14 @@
         $("#empty").on("click", function () {
           $("#result p:nth-child(2)").empty(); // #result에 해당하는 요소의 내용(하위) 삭제
         });
+        
+        $("#cloneBtn").click(function () {
+          // $(자식선택자).appendTo(부모선택자)
+          $(".hello").clone().appendTo(".goodbye");
+          // clone(true) : 엘리먼트 복제하고, 이벤트 핸들러 기능까지 복제됨
+          // clone(false) : 엘리먼트만 복제 
+          $(this).clone(true).insertAfter(this);
+        });
       });
     </script>
   </head>
@@ -57,5 +66,12 @@
     <button id="remove">remove</button><br />
     <button id="empty">empty</button><br />
     <hr />
+    <div class="goodbye">
+      홍길동
+      <div class="hello">
+        이순신
+      </div>
+    </div>
+    <button id="cloneBtn">clone()</button>
   </body>
 </html>

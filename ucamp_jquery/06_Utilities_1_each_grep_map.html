@@ -13,27 +13,36 @@
 			'November', 'December' ];
     	
 	    //1. each : 단순 반복 처리
-    	$.each( months , function(idx,value){
+    	$.each( months , function(idx,value){ // join 하지 않으면 모두 array
     		console.log(idx+ "  " + value);
+			$("#monthList").append(`<li>${value}</li>`); 
     	});
 	    
     	//2. grep : 필터링 처리
     	var months2 = $.grep(months, function(value, i) {
 			return (value.indexOf('J') == 0);
-		});
-	    console.log(months2);
+		}).join(",");
+		console.log(months2);
+		$("#monthJ").append(`<strong>${months2}</strong>`);
 	  
 	  //3. map : 가공 처리
 	    var months3 = $.map(months, function(value, i) {
 			return value.substring(0,3);
-		});
+		}).join("/");
 	    console.log(months3);
-	    
+	    $("#month3Name").append(`<li>${months3}</li>`);
   });
 
 </script>
 </head>
 <body>
-
+	<h3>1월 ~ 12월 </h3>
+	<ul id="monthList"></ul>
+	<hr>
+	<h3>1월 ~ 12월(J 포함) </h3>
+	<p id="monthJ"></p>
+	<hr>
+	<h3>1월 ~ 12월(축약) </h3>
+	<p id="month3Name"></p>
 </body>
 </html> 

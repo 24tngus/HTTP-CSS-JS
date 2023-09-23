@@ -10,8 +10,12 @@
 	
 	  var sum = 0;
 	  $("li").each(function(idx  , ele){
-		     console.log(idx, ele.innerText);
+		    //  console.log(idx, ele.innerText);
+			console.log(typeof $(ele).text()); // String
 		     console.log(idx, $(ele).text());
+
+			 
+			 console.log(typeof $(this).text());
 		     console.log($(this).text());
 		     
 		     sum = sum + Number.parseInt($(this).text());
