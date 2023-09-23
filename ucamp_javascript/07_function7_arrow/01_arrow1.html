@@ -12,10 +12,14 @@
        a();
        
        //arrow 표현식
-       var a2 = ()=>{
-    	   console.log("a2");  
+       var a2 = (msg)=>{
+    	   console.log("a2");
+          return msg + ">>>";
        };
-       a2();
+       console.log(a2("화살표 함수"));
+
+       var a3 = (msg) => '<<<' + msg;
+       console.log(a3("자동 리턴"));
        
 </script>
 </head>
