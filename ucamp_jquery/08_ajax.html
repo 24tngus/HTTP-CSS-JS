@@ -1,38 +1,76 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
-<script>
-  $(document).ready(function(){
-	
-	$("#req").on( "click" , function(){
-		var url = "https://reqres.in/api/users";
-    		$.ajax({
-    			type: "get",
-    			url: url,
-    			data: {
-    				page: 2
-    			},
-    			dataType: "text",
-    			success: function( responseData, status , xhr ){
-    				
-    				$("#result").text( responseData);
-    			},
-    			error:function(xhr, status , error){
-    				
-    			}
-    		})
-    	});
-	    
-  });
+    <script>
+      $(document).ready(function () {
+        $("#req").on("click", function () {
+          var page_value = $("#page option:selected").val();
+          var url = `https://reqres.in/api/users`;
+          $.ajax({
+            type: "get",
+            url: url,
+            data: {
+              page: page_value,
+            },
+            dataType: "text",
+            success: function (responseData, status, xhr) {
+              $("#result").text(responseData);
+              response_user_list(responseData);
+            },
+            error: function (xhr, status, error) {
+              console.log(error);
+            },
+          });
+        });
+      }); //ready
 
-</script>
-</head>
-<body>
-<button id="req">요청</button>
-<div id="result"></div>
-</body>
-</html> 
+      function response_user_list(responseText) {
+        var table_header = `<tr>
+                <th>id</th>
+                <th>email</th>
+                <th>first_name</th>
+				<th>last_name</th>
+				<th>avatar</th>
+			</tr>`;
+
+		$("#usersList").empty();	
+		$("#usersList").append(table_header);
+
+		//text data => object
+		var json_obj = JSON.parse(responseText);
+		var userDataList = json_obj.data;
+
+		$.each(userDataList, function(idx, userData){
+			const {id, email, first_name, last_name, avatar } = userData;
+			var avatar_image = `<img src=${avatar} />`;
+			
+			$('<tr>').append($('<td>').html(id))
+				.append($('<td>').html(email))
+				.append($('<td>').html(first_name))	
+				.append($('<td>').html(last_name))
+				.append($('<td>').html(avatar_image))
+			.appendTo('tbody');		
+		});	
+      }
+    </script>
+  </head>
+  <body>
+    <h3>User List</h3>
+    page번호
+    <select id="page">
+      <option value="1">1Page</option>
+      <option value="2">2Page</option>
+    </select>
+    <br />
+
+    <button id="req">요청</button>
+    <div id="result"></div>
+    <table border="1">
+      <tbody id="usersList"></tbody>
+    </table>
+  </body>
+</html>

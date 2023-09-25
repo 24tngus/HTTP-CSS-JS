@@ -9,17 +9,31 @@
   $(document).ready(function(){
 	 	
 	    //1. button 이벤트
-	    $("#ok").on("click  mouseover",function(){
-	      console.dir(event.target);
-	      console.dir(this);
-	      console.dir($(this));
-	      console.dir($(this).text());
-	    });
+	    // $("#ok").on("click  mouseover",function(){ // 이벤트 여러개 작성 가능 
+	    //   console.dir(event.target);
+	    //   console.dir(this);
+	    //   console.dir($(this));
+	    //   console.dir($(this).text());
+	    // });
+
+		$("#ok").on({
+			mouseover: function() {
+				$(this).css("background-color", "yellow"); // button 배경 변경 (background-color는 backgroundColor와 동일)
+			},
+			mouseleave: function() {
+				$(this).css("background-color", "white");
+			},
+			click: function() {
+				$(this).text($(this).text().toLowerCase())
+						.css("font-size", "30px");
+			}
+		});
 	
 	    $("#txtInput").on("keyup", function(e) {
 	    	console.log($(this).val());
+
+			$("#textSpan").text($(this).val());
 		});
-	    
 
     	$("#hover").hover(function(){
     		console.log("mouseenter");
@@ -27,16 +41,35 @@
     		console.log("mouseleave");
     	});
 		
+		$("#hoverImg").hover(
+			function() {
+				// mouseover
+				$(this).attr({"src":"./images/b.jpg"}).css("border-radius", "50%")
+			},
+			function() {
+				// mouseout
+				$(this).attr({"src":"./images/a.jpg"}).css("border-radius", "30%")
+			}
+		);
 	  //2. change 이벤트
 		$("select").on("change", function(){
 			console.log("select 선택!!" + $(":selected").text());
 			console.log("select 선택!!" + $(this).val());
+
+			var img_url = `./images/${$(this).val()}.png`;
+			$("#fruitImg").attr("src", img_url);
 		});
 	  
 	  //3.checkbox 선택
-	    $("#checkbox").on("change", function(){
-	    	console.log(this.checked);
-	    });
+	    // $("#checkbox").on("change", function(){
+	    // 	console.log(this.checked);
+	    // });
+		$("#all").on("click", function() {
+			var allChecked = this.checked;
+			$(".fruit").each(function(idx, chkbox) {
+					chkbox.checked = allChecked;
+			});
+		});
 	  
 	  //4. submit 이벤트
 		 $("form").on("submit", function(){
@@ -53,16 +86,26 @@
 <body>
 <button id="ok">OK</button><br>
 text:<input type="text" id="txtInput" /> <br>
+<span id="textSpan"></span><br>
+
 <button id="hover">hover</button><br>
+<img id="hoverImg" src="./images/a.jpg" height="100" width="100" />
 <form action="http://www.google.com">
 아이디<input type="text" name="userid" id="userid"><br>
 비밀번호<input type="text" name="passwd"><br>
 <select name="fruit">
- <option value="사과">사과</option>
- <option value="바나나">바나나</option>
- <option value="수박">수박</option>
+	<option value="apple">사과</option>
+	<option value="banana">바나나</option>
+	<option value="watermelon">수박</option>
 </select><br>
- 사과<input type="checkbox" name="checkbox" id="checkbox" checked>
+<img src="./images/apple.png" id="fruitImg" width="100" height="100" /><br>
+전체선택
+<input type="checkbox" name="all" id="all" /><br />
+<input type="checkbox" name="apple" class="fruit" />사과<br />
+<input type="checkbox" name="banana" class="fruit" />바나나<br />
+<input type="checkbox" name="watermelon" class="fruit" />수박<br />
+
+<!-- 사과<input type="checkbox" name="checkbox" id="checkbox" checked>  -->
 <input type="submit" value="전송">
 </form>
 </body>
