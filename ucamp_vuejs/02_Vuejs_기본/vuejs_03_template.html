@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 개발버전, 도움되는 콘솔 경고를 포함. -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        This will be replaced !
+    </div>
+
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: '안녕하세요 Vue!'
+            },
+            template: `<div>{{message}}</div>`  //template 속성값에는 반드시 root태그 필요
+        });
+    </script>
+</body>
+
+</html>

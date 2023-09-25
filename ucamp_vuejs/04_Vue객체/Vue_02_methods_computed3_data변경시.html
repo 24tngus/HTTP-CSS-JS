@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 개발버전, 도움되는 콘솔 경고를 포함. -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="number" v-model="num">
+        값:{{num}}<br>
+        {{xxx()}}{{xxx()}}
+        {{yyy}}{{yyy}}
+    </div>
+
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                num: 0
+            },
+            // methods 함수는 기본적으로 호출할때마다 매번 호출된다. (캐시기능없음)
+            // 반드시 () 이용
+            // 화면이 다시 랜더링 될때마다 화면에서 사용되고 있는 methods들이 모두 다시 실행된다
+            methods: {
+                xxx() {
+                    console.log("xxx", this.num);
+                }
+            },
+            // computed 함수는 기본적으로 한번만 호출된다. ( 캐싱 기능 )
+            // () 사용안함
+            // 화면이 다시 랜덩링 여부와 상관없이 실행 안됨.
+            // 함수안에서 data 접근코드 지정하고 data가 변경되면 호출된다.
+            computed: {
+                yyy() {
+                    console.log("yyy", this.num);
+                }
+            }
+        });
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vuejs 기본 구조</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        #t1 {
+            background-color: yellow;
+        }
+
+        #t2 {
+            background-color: blue;
+        }
+
+        #t3 {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <top1-component></top1-component>
+    </div>
+    <template id="top1">
+        <div id="t1">
+            <h1>top1</h1>
+            <top2-component></top2-component>
+        </div>
+    </template>
+    <template id="top2">
+        <div id="t2">
+            <h2>top2</h2>
+            <top3-component></top3-component>
+        </div>
+    </template>
+    <template id="top3">
+        <div id="t3">
+            <h3>top3</h3>
+        </div>
+    </template>
+    <script>
+        const t1 = Vue.component('top1-component', {
+            template: "#top1"
+        });
+        const t2 = Vue.component('top2-component', {
+            template: "#top2"
+        });
+        const t3 = Vue.component('top3-component', {
+            template: "#top3"
+        });
+        var app = new Vue({
+            el: '#app',
+        });
+    </script>
+</body>
+
+</html>

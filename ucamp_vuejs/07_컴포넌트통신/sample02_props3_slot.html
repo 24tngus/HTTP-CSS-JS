@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vuejs 기본 구조</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        p {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <child-component :xyz="message">
+            <!-- 자식에게 전달할 html태그는 일반적으로 template 사용함.-->
+            <template>
+                <div>
+                    <p>자식에게 전달할 html</p>
+                </div>
+            </template>
+        </child-component>
+    </div>
+    
+    <template id="child">
+        <div>
+            <h1>child</h1>
+            <h2>부모에서 자식에게 문자열 전달: props</h2>
+            {{xyz}}
+            <h2>부모에서 자식에게 html 전달: slot</h2>
+            <slot></slot>
+            <slot></slot>
+        </div>
+    </template>
+
+
+    <script>
+        //자식
+        const t1 = Vue.component('child-component', {
+            template: "#child",
+            props: ['xyz']
+        });
+
+        //부모
+        var app = new Vue({
+            el: '#app',
+            data: function () {
+                return {
+                    message: "안녕하세요"
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

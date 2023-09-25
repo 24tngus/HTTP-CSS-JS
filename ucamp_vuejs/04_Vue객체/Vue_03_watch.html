@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue객체의 methods 속성</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="number" v-model='v1'>+<input type="number" v-model='v2'>={{sum}}
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                v1: 0,
+                v2: 0,
+                sum: 0
+            },
+            // 1. watch 속성의 함수명은 반드시 data 속성명과 일치해야 된다.
+            // 2. methods 및 computed 함수도 data 속성이 변경되면 자동으로 호출되지만,
+            //  반드시 명시적으로 함수명을 지정한 경우에만 해당된다.
+            //  하지만 watch는 명시적으로 호출하지 않아도 자동으로 호출된다.
+            watch: {
+                v1(newValue, oldValue) {
+                    console.log("v1값 변경됨", oldValue, newValue);
+                    this.sum = Number.parseInt(newValue) + Number.parseInt(this.v2);
+                },
+                v2(newValue, oldValue) {
+                    console.log("v2값 변경됨", oldValue, newValue);
+                    this.sum = Number.parseInt(this.v1) + Number.parseInt(newValue);
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vuejs 기본 구조</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h3 v-html="num"></h3>
+        <button @click="plus">+</button>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                num: 0,
+                title: "hook method"
+            },
+            methods: {
+                plus() {
+                    return ++this.num;
+                }
+            },
+            beforeCreate() {
+                // 아직 el 이나 data가 연동되지 않았다.
+                console.log("beforeCreate", this.title, this.$el);
+            },
+            created() {
+                // data, computed, methods, watch 설정이 완료된다.
+                console.log("created", this.title, this.$el);
+            },
+            beforeMount() {
+                // data와 el이 준비 되었지만 아직 화면이 대체되지 않았다.
+                console.log("beforeMount", this.title, this.$el.innerHTML);
+                console.log("beforeMount", document.querySelector("#app").innerHTML);
+            },
+            mounted() {
+                // data와 el이 준비 되었으며 화면이 Virtual DOM으로 대체되었다.
+                console.log("mounted", this.title, this.$el.innerHTML);
+                console.log("mounted", document.querySelector("#app").innerHTML);
+            },
+            beforeUpdate() {
+                // + 를 누르면 값이 업데이트 되려고 한다. 값은 변경되었으나 화면 갱신전이다.
+                console.log("beforeUpdate", this.num, document.querySelector("#app").innerHTML);
+            },
+            updated() {
+                // 값이 업데이트 되었고 화면도 갱신 되었다.
+                console.log("updated", this.num, document.querySelector("#app").innerHTML);
+            },
+            beforeDestory() {
+                // 객체가 삭제 되기 직전이다.
+                console.log("beforeDestory", this.title, this.$el);
+            },
+            destroy() {
+                // 객체가 삭제된 이후이다.
+                console.log("destroy", this.title, this.$el);
+            }
+        });
+
+        console.log(app);
+    </script>
+</body>
+
+</html>

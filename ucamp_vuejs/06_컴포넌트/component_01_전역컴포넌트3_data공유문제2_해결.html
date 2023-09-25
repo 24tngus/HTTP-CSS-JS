@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 개발버전, 도움되는 콘솔 경고를 포함. -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <date1-component></date1-component>
+            <hr>
+            <date2-component></date2-component>
+        </div>
+
+    </div>
+
+    <template id="date-template">
+        <div>
+            <button @click="increment">+</button>
+            {{num}}
+        </div>
+    </template>
+
+    <script>
+
+        // var current = { num: 0 };
+
+        // 컴포너트의 태그명은 일반적으로 케밥표기법을 선호한다.
+        var date1 = Vue.component("date1-component", {
+            //template은 반드시 root태그 필수
+            template: "#date-template",
+            data: function () {
+                return { num: 0 };
+            },
+            methods: {
+                increment() {
+                    this.num = this.num + 1;
+                }
+            }
+        });
+        var date2 = Vue.component("date2-component", {
+            //template은 반드시 root태그 필수
+            template: "#date-template",
+            data: function () {
+                return { num: 0 };
+            },
+            methods: {
+                increment() {
+                    this.num = this.num + 1;
+                }
+            }
+        });
+
+
+        var app = new Vue({
+            el: '#app'
+        });
+    </script>
+</body>
+
+</html>

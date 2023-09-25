@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        // arrow 함수
+        //1. 파라미터없고 리턴값 없는 형식
+        function fun() {
+            console.log("fun");
+        }
+        const x = () => { console.log("arrow-fun"); };
+        const x2 = () => console.log("arrow-fun");
+        x();
+
+        //2. 파라미터있고 리턴값 없는 형식
+        function fun2(n, n2) {
+            console.log("fun2", n, n2);
+        }
+        const x3 = (n, n2) => console.log("arrow-fun2", n, n2);
+        x3(1, 2);
+
+        //3. 파라미터없고 리턴값 있는 형식
+        function fun3() {
+            return 100;
+        }
+        const x4 = () => 100;
+        console.log(x4());
+
+        //4. 파라미터있고 리턴값 있는 형식
+        function fun4(n, n2) {
+            return n * n2;
+        }
+        const x5 = (n, n2) => n * n2;
+        console.log(x5(10, 2));
+
+
+        // 주의할 점: arrow 함수는 this 바인딩 안됨, arrow함수에서 this는 Window 객체임.
+        var user = {
+            n: 9999,
+            b: function () {
+                console.log(this, this.n); // {n: 9999, b: ƒ, c: ƒ}   9999
+            },
+            c: () => console.log(this, this.n)  // Window객체    undefined
+        }
+        user.b();
+        user.c();
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 개발버전, 도움되는 콘솔 경고를 포함. -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <h1>배열 반복1</h1>
+            <ul>
+                <li v-for="(value) in heros">{{value}}</li>
+            </ul>
+            <h1>배열 반복2</h1>
+            <ul>
+                <li v-for="(value,index) in heros" :key="index">{{index}}:{{value}}</li>
+            </ul>
+            <h1>객체 반복1</h1>
+            <ul>
+                <li v-for="(value,key) in hero">{{key}}:{{value}}</li>
+            </ul>
+            <h1>객체 반복2</h1>
+            <ul>
+                <li v-for="(value,key,index) in hero" :key="index">{{index}}:{{key}}:{{value}}</li>
+            </ul>
+        </div>
+    </div>
+
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                heros: ["A", "B", "C"],
+                hero: {
+                    name: "홍길동",
+                    age: 20,
+                    address: "서울"
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

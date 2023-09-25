@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Welcome to Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  
+  <body>
+    <div id="app">
+      <h1>예방 접종 대상자</h1>
+      <h3>1차 대상자</h3>
+      <contact-component :contacts="list1"></contact-component>
+      <h3>2차 대상자</h3>
+      <contact-component :contacts="list2"></contact-component>
+    </div>
+
+    <template id="contactTemplate">
+      <table border="1">
+        <tr>
+          <th>번호</th>
+          <th>이름</th>
+          <th>전화번호</th>
+          <th>주소</th>
+        </tr>
+        <tr v-for="contact in contacts">
+          <td>{{contact.no}}</td>
+          <td>{{contact.name}}</td>
+          <td>{{contact.phone}}</td>
+          <td>{{contact.address}}</td>
+        </tr>
+      </table>
+    </template>
+
+    <script>
+      const t1 = Vue.component("contact-component", {
+        template: `#contactTemplate`,
+        props: ["contacts"],
+      });
+
+      var app = new Vue({
+        el: "#app",
+        data: {
+          list1: [
+            { no: 10, name: "홍길동", phone: "010-1111-1111", address: "서울" },
+            { no: 9, name: "이순신", phone: "010-4444-4444", address: "전라" },
+            { no: 8, name: "강감찬", phone: "010-3333-3333", address: "경기" },
+            { no: 7, name: "임꺽정", phone: "010-9999-9999", address: "전라" },
+            { no: 6, name: "윤동주", phone: "010-8888-8888", address: "서울" },
+          ],
+          list2: [
+            { no: 5, name: "윤봉길", phone: "010-7777-7777", address: "제주" },
+            { no: 4, name: "한용운", phone: "010-6666-6666", address: "부산" },
+            { no: 3, name: "백범", phone: "010-5555-5555", address: "강원" },
+            { no: 2, name: "안창호", phone: "010-2222-2222", address: "울산" },
+            { no: 1, name: "이육사", phone: "010-0909-0909", address: "서울" },
+          ],
+        },
+      });
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vuejs 이벤트 처리</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        #canvas {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <select v-model="your_event">
+            <option value="mousemove">mousemove</option>
+            <option value="click">click</option>
+        </select>
+        >>> {{your_event}}
+        <div id="canvas" @[your_event]="actionPerform($event)"></div>
+        status:<input type="text" name="status" v-model="status"><br>
+        x:<input type="text" name="x" v-model="x"><br>
+        y:<input type="text" name="y" v-model="y">
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                your_event: 'mousemove',
+                status: '',
+                x: 0,
+                y: 0,
+            },
+            methods: {
+                actionPerform(e) {
+                    this.status = e.type;
+                    this.x = e.clientX;
+                    this.y = e.clientY;
+                },
+
+            }
+        });
+    </script>
+</body>
+
+</html>

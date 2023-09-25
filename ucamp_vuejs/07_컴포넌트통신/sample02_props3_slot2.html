@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vuejs 기본 구조</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        p {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <child-component :xyz="message">
+            <template v-slot:header>
+                <div>
+                    <p>자식에게 전달할 html,header</p>
+                </div>
+            </template>
+            <template v-slot:body>
+                <div>
+                    <p>자식에게 전달할 html,body</p>
+                </div>
+            </template>
+            <template v-slot:footer>
+                <div>
+                    <p>자식에게 전달할 html,footer</p>
+                </div>
+            </template>
+        </child-component>
+    </div>
+    <template id="child">
+        <div>
+            <h1>child</h1>
+            <h2>부모에서 자식에게 문자열 전달: props</h2>
+            {{xyz}}
+            <h2>부모에서 자식에게 html 전달: slot</h2>
+            <slot name="body"></slot>
+            <slot name="header"></slot>
+            <slot name="footer"></slot>
+        </div>
+    </template>
+
+
+    <script>
+        //자식
+        const t1 = Vue.component('child-component', {
+            template: "#child",
+            props: ['xyz']
+        });
+
+        //부모
+        var app = new Vue({
+            el: '#app',
+            data: function () {
+                return {
+                    message: "안녕하세요"
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

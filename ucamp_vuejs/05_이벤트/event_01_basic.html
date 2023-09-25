@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vuejs 이벤트 처리</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        현재 잔고: <span>{{balance}}</span><br/>
+        <label>거래 금액</label>
+        <input type="number" v-model="amount">
+        <button v-on:click="balance += parseInt(amount)">입금</button><br/><br/>
+        <button @click="withdraw">출금1-콜백</button>
+        <button @click="withdraw()">출금2-직접호출</button>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                amount: 0,
+                balance: 1000
+            },
+            methods: {
+                withdraw() {
+                    if (this.balance >= this.amount) {
+                        this.balance -= this.amount;
+                    } else {
+                        alert("잔액 부족");
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

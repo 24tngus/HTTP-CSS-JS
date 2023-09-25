@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 개발버전, 도움되는 콘솔 경고를 포함. -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <input type="number" v-model="num" /><br />
+      num : {{num}}<br />
+      message : <input type="text" v-model="message" />
+      <p>원본 메시지: "{{ message }}"</p>
+      <p>역순으로 표시한 메시지: "{{ reversedMessage() }}"</p>
+    </div>
+
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {
+          message: "Hello",
+          num: 0,
+        },
+        // methods 함수는 기본적으로 호출할때마다 매번 호출된다. (캐시기능없음)
+        // 반드시 () 이용
+        methods: {
+          reversedMessage: function () {
+            console.log("methods reverseMessage");
+            return this.message.split("").reverse().join("");
+          },
+        },
+        // computed 함수는 기본적으로 한번만 호출된다. ( 캐싱 기능 )
+        // () 사용안함
+        computed: {
+            // reversedMessage: function () {
+            //   console.log("computed reverseMessage")
+            //   return this.message.split("").reverse().join("");
+            // },
+        },
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 개발버전, 도움되는 콘솔 경고를 포함. -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            이름1:<input v-model="username" /><br>
+            <!-- 이름2(lazy):<input v-model.lazy="username" /><br> -->
+            입력한 이름:{{username}}<br>
+            <hr/>
+            나이1:<input v-model="age" /><br>
+            나이2(number):<input v-model.number="age" /><br>
+            입력한 나이:{{age}}<br>
+            <hr/>
+            주소1:<input v-model="address" /><br>
+            주소2(trim):<input v-model.trim="address" /><br>
+            입력한 주소:{{address}}<br>
+            <hr/>
+            출생연도(lazy.number):<input v-model.lazy.number="year"><br>
+            입력연도:{{year}}<br>
+            <hr/>
+            배열1:<input type="checkbox" v-model="team" value="A">A<br>
+            배열2:<input type="checkbox" v-model="team" value="B">B<br>
+            배열3:<input type="checkbox" v-model="team" value="C">C<br>
+            선택한 배열:{{team}}
+        </div>
+    </div>
+
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                username: "",
+                age: '',
+                address: '',
+                year: '',
+                team: []
+            }
+        });
+    </script>
+</body>
+
+</html>

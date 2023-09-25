@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 개발버전, 도움되는 콘솔 경고를 포함. -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- {{}}을 mustache(이중중괄호)라고 부른다.-->
+        1) message:{{ message }}<br>
+        2) age(산술연산):{{ age+1 }}<br>
+        3) 30보다 적냐?(비교연산):{{age<30}}<br>
+        4) 이름길이:{{ author.name.length}}<br>
+        5) 결혼여부(3항연산자):{{ isMarried?"기혼":"미혼" }}<br>
+
+        6) 문자열_대문자함수:{{message.toUpperCase()}}<br>
+        7) 문자열_소문자함수:{{message.toLowerCase()}}<br>
+        8) 문자열_부분열함수:{{message.slice(0,3)}}<br>
+        9) 문자열_치환함수:{{message.replace("Vue","vuex")}}<br>
+        10) 수치_정수변환함수:{{Number.parseInt(height)}}<br>
+        11) 배열_join함수:{{phones.join(":")}}
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: '안녕하세요 Vue!',
+                age: 20,
+                height: 178.535,
+                phones: [100, 200, 300],
+                author: { name: "홍길동", age: 20 },
+                isMarried: true
+            }
+        });
+    </script>
+</body>
+
+</html>

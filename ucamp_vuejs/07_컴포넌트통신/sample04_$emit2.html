@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Welcome to Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+
+<body>
+    <div id="app">
+        <!-- <button @click="receive">parent</button>  -->
+        <hello-component v-on:xyz="receive"></hello-component>
+    </div>
+
+    <template id="helloTemplate">
+        <div>
+            <button @click="send">child</button>
+        </div>
+    </template>
+    <script>
+
+        Vue.component('hello-component', {
+            template: `#helloTemplate`,
+            methods: {
+                send: function (e) {
+                    //부모에게 xyz 이벤트 발신
+                    this.$emit('xyz', '홍길동', 20);
+                }
+            }
+        });
+
+        var app = new Vue({
+            el: '#app',
+            methods: {
+                receive: function (name, age) {
+                    console.log("parent.receive", name, age);
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

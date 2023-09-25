@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        // 클래스
+        class Person {
+            set username(name) {
+                this.name = name;
+            }
+            set userage(age) {
+                this.age = age;
+            }
+            get username() {
+                return this.name;
+            }
+            get userage() {
+                return this.age;
+            }
+        }//end class
+
+        var p = new Person();
+        p.username = "홍길동";
+        p.userage = 20;
+        console.log(p.username);
+        console.log(p.userage);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

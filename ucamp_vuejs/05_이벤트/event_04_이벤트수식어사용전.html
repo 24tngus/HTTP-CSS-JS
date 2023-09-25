@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vuejs 기본 이벤트 처리 방지</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h2>preventDefault</h2>
+        <form action="https://www.google.com/" @submit="login">
+            ID:<input type="text" placeholder="ID는 4글자 이상입니다." v-model="id" ref="myId">
+            <input type="submit">
+        </form>
+        <h2>stopPropagation</h2>
+        <div style="background-color: yellow;" @click="parent">
+            parent
+            <div style="background-color: green;" @click="child">
+                child
+            </div>
+        </div>
+        <h2>keyup.enter</h2>
+        num1:<input type="text" @keyup="knum"><br>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                id: ""
+            },
+            methods: {
+                login(e) {
+                    if (this.id.length >= 4) {
+                        e.target.submit();
+                    } else {
+                        e.preventDefault();
+                        alert("ID를 4글자 이상으로 넣어주세요");
+                        this.$refs.myId.focus();
+
+                    }
+                },
+                parent(e) {
+                    console.log("parent");
+                },
+                child(e) {
+                    console.log("child");
+                    e.stopPropagation();
+                },
+                knum(e) {
+                    // console.log(e.keyCode); //enter는 13
+                    if (e.keyCode == 13) {
+                        console.log("knum");
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

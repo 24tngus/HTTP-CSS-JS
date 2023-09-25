@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 개발버전, 도움되는 콘솔 경고를 포함. -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        나이:<input v-model.number="age" />
+        <img v-show="age < 0" src="images/error.png" width="20" height="20">
+        <hr>
+        당신은:
+        <span v-if="age < 0">입력오류</span>
+        <span v-else-if="age < 8">미취학</span>
+        <span v-else-if="age < 19">미성년</span>
+        <span v-else>성년</span>
+    </div>
+
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                age: ''
+            }
+        });
+    </script>
+</body>
+
+</html>

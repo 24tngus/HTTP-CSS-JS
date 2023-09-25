@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vuejs 기본 구조</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <child-component xyz="hello"></child-component>
+        <child-component :xyz="message"></child-component>
+    </div>
+    <template id="child">
+        <div>
+            <h1>child</h1>
+            {{xyz}}
+        </div>
+    </template>
+
+
+    <script>
+        //자식
+        const t1 = Vue.component('child-component', {
+            template: "#child",
+            props: ['xyz']
+        });
+
+        //부모
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: "안녕하세요"
+            }
+        });
+    </script>
+</body>
+
+</html>

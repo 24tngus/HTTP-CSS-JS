@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vuejs 이벤트 처리</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div @click="clicked" @mouseover="over()" @mouseout="out($event)">
+            Hello
+        </div>
+
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                amount: 0,
+                balance: 1000
+            },
+            methods: {
+                clicked(e) {
+                    console.log("clicked 콜백됨,", e);
+                },
+                over(e) {
+                    console.log("over 콜백 안됨,", e);
+                },
+                out(e) {
+                    console.log("over 콜백 안됨. 따라서 명시적으로 $event 지정,", e);
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

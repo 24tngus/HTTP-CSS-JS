@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vuejs 기본 구조</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 전달할 데이터 키는 캐밥 표기법으로 지정-->
+        <child-component xyz="hello" user-name="hi" user-age="20"></child-component>
+        <child-component :xyz="message" user-name="GoodBye"></child-component>
+    </div>
+    <template id="child">
+        <div>
+            <h1>child</h1>
+            {{xyz}}<br>
+            {{userName}}<br>
+            {{userAge}}<br>
+        </div>
+    </template>
+
+
+    <script>
+        //자식
+        const t1 = Vue.component('child-component', {
+            template: "#child",
+            props: ['xyz', 'userName', 'userAge'] //받는 쪽에서는 카멜표기법 가능
+        });
+
+        //부모
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: "안녕하세요"
+            }
+        });
+    </script>
+</body>
+
+</html>

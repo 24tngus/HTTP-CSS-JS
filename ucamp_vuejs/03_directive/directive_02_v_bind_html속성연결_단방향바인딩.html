@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 개발버전, 도움되는 콘솔 경고를 포함. -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        .red-accent {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <ul v-bind:id="mid">
+            <li :class="mclass">클래스바인딩</li>
+            <li :style="mstyle">스타일바인딩</li>
+            <li><a :href="link.mhref" :title="link.mtitle">go</a></li>
+        </ul>
+    </div>
+
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                mid: "list",
+                mclass: "red-accent",
+                mstyle: "color:blue",
+                link: {
+                    mhref: "http://vuejs.org",
+                    mtitle: "google"
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

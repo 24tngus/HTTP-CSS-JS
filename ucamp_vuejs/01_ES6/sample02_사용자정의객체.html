@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        // 사용자 정의 객체
+        let address = "서울";
+        let my = 'email';
+        var user = {
+            username: "홍길동",
+            age: 20,
+            // address: address,
+            address,
+            [my]: "aaa@daum.net",  // key값을 변수로 설정 가능
+            getName: function () {
+                return this.username;
+            },
+            getAge() {
+                return this.age;
+            }
+        };
+        console.log(user);
+        console.log(user.username);
+        console.log(user.age);
+        console.log(user.address);
+        console.log(user.getName());
+        console.log(user.getAge());
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
