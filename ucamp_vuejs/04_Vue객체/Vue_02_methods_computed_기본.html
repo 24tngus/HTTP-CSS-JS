@@ -15,7 +15,7 @@
       num : {{num}}<br />
       message : <input type="text" v-model="message" />
       <p>원본 메시지: "{{ message }}"</p>
-      <p>역순으로 표시한 메시지: "{{ reversedMessage() }}"</p>
+      <p>역순으로 표시한 메시지: "{{ reversedMessage }}"</p> 
     </div>
 
     <script>
@@ -27,21 +27,25 @@
         },
         // methods 함수는 기본적으로 호출할때마다 매번 호출된다. (캐시기능없음)
         // 반드시 () 이용
+        // message 아닌 num 변경해도 계속 수행됨 (불필요한 렌더링 계속 발생)
         methods: {
-          reversedMessage: function () {
-            console.log("methods reverseMessage");
-            return this.message.split("").reverse().join("");
-          },
-        },
+          // reversedMessage() {
+
+          // 위와 동일
+          // reversedMessage: function () {
+          //   console.log("methods reverseMessage");
+          //   return this.message.split("").reverse().join(""); // olleH
+          // }, 
+        }, // methods
         // computed 함수는 기본적으로 한번만 호출된다. ( 캐싱 기능 )
         // () 사용안함
         computed: {
-            // reversedMessage: function () {
-            //   console.log("computed reverseMessage")
-            //   return this.message.split("").reverse().join("");
-            // },
+            reversedMessage: function () {
+              console.log("computed reverseMessage")
+              return this.message.split("").reverse().join("");
+            },
         },
-      });
+      }); // computed
     </script>
   </body>
 </html>

@@ -14,7 +14,7 @@
         현재 잔고: <span>{{balance}}</span><br/>
         <label>거래 금액</label>
         <input type="number" v-model="amount">
-        <button v-on:click="balance += parseInt(amount)">입금</button><br/><br/>
+        <button v-on:click="balance += parseInt(amount)">입금</button><br/><br/> 
         <button @click="withdraw">출금1-콜백</button>
         <button @click="withdraw()">출금2-직접호출</button>
     </div>

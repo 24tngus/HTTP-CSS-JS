@@ -7,14 +7,23 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
 
-    
     $(document).ready(function() {
-		 //구현
+		 $("input:submit").click(function() {
+			var uid = $("#userid").val();
+			var upwd = $("#passwd").val();
+			if (uid == "") {
+				alert("아이디 값을 입력하시오");
+			} else if (upwd == "") {
+				alert("비밀번호 값을 입력하세요");
+			} else {
+				$("#url").attr("action", "success.html").submit();
+			}
+		 })
 	});
 </script>
 </head>
 <body>
-<form action="success.html">
+<form id="url">
  아이디<input type="text" name="userid" id="userid"><br>
  비밀번호<input type="text" name="passwd" id="passwd"><br>
   <input type="submit" value="로그인" >

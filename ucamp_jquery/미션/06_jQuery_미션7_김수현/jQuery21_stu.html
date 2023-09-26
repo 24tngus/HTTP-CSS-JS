@@ -7,13 +7,21 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
 
-   
-   var arr = [];  
-   
-   
+    var arr = [];  
    $(document).ready(function() {
-		//구현
-    });
+      $("#v1").on("keyup", function(e) {
+        if (e.keyCode == 13) {
+          var mesg = "";
+          arr.push($("#v1").val());
+          
+          for(var i=0; i < arr.length; i++) {
+             mesg += arr[i] + "<br>";
+          }
+          $("#result").html(mesg);
+
+        }
+      });
+   });
 </script>
 </head>
 <body>

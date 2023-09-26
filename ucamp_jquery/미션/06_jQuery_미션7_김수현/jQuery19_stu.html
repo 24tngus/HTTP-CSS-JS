@@ -9,7 +9,9 @@
 
    $(document).ready(function() {
 		 var childWin;
-			//구현
+		$("#btn").click(function() {
+			childWin = window.open("childWin3.html", "", "width=400,height=400");
+		});
    });
 
 </script>
@@ -18,7 +20,7 @@
  우편번호<input type="text" name="post" id="post"><br>
  주소:<input type="text" name="address" id="address"><br>
  추가주소:<input type="text" name="address1" id="address1">
- <button>주소</button>
+ <button id="btn">주소</button>
 
 </body>
 </html>

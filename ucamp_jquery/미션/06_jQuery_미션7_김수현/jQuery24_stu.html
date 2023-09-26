@@ -7,8 +7,15 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
+		$(".selected").css({"color":"red", "font-size":"30px"});
+		$("#sum").click(function() {
+			var total = 0;
+			$("li.selected").each(function() {
 
-		//구현
+				total += parseInt($(this).text());
+			});
+			$("#result").text(total);
+		});
 		
 	});
 </script>
@@ -16,11 +23,11 @@
 <body>
 	<ul>
 	 <li>5</li>
-	 <li>15</li>
+	 <li class="selected">15</li>
 	 <li>25</li>
-	 <li>35</li>
+	 <li class="selected">35</li>
 	 <li>45</li>
-	 <li>55</li>
+	 <li class="selected">55</li>
 	 <li>65</li>
 	</ul>
 <button id="sum">li태그의 총합계</button><br>

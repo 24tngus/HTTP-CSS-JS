@@ -13,11 +13,11 @@
 <body>
     <div id="app">
         <label>이름을 입력하세요</label>
-        <input type="text">
-        <span>이름은 3글자 이상입니다.</span><br>
+        <input type="text" v-model="username"> 
+        <span v-show="username.length < 3">이름은 3글자 이상입니다.</span><br>
         <label>나이를 입력하세요</label>
-        <input type="text" >
-        <span>나이는 10세 이상, 120 이하만 가능합니다.</span>
+        <input type="text" v-model="age">
+        <span v-if="age < 10 || age >= 120">나이는 10세 이상, 120 이하만 가능합니다.</span>
     </div>
 
     <script>

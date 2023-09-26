@@ -12,7 +12,11 @@
 
 <body>
     <div id="app">
-        나이:<input v-model.number="age" />
+        <input type="checkbox" v-model="isShow" />Image 보여주기
+        isShow 값은 {{isShow}} <br/>
+        <img src="images/error.png" width="20" height="20" v-show="isShow" /><br/>
+
+        나이:<input v-model.number="age" /> <br/>
         <img v-show="age < 0" src="images/error.png" width="20" height="20">
         <hr>
         당신은:
@@ -27,7 +31,8 @@
         var app = new Vue({
             el: '#app',
             data: {
-                age: ''
+                age: '',
+                isShow:false,
             }
         });
     </script>

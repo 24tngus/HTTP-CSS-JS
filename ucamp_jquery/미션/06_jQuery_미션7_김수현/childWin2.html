@@ -9,8 +9,13 @@
 
  $(document).ready(function() {
 
-	   //구현
+	   $("#a").click(function() {
+		var data = $("#userid").val();
+		$("#userid", opener.document).val(data);
+		window.close();
+	   });
 });
+
 </script>
 </head>
 <body>

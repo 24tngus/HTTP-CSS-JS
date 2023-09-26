@@ -18,10 +18,12 @@
 <body>
     <div id="app">
         <ul v-bind:id="mid">
-            <li :class="mclass">클래스바인딩</li>
+            <li v-bind:class="mclass">클래스바인딩</li>
             <li :style="mstyle">스타일바인딩</li>
             <li><a :href="link.mhref" :title="link.mtitle">go</a></li>
         </ul>
+        <img v-bind:src="user_imgs[0]" /><br/>
+        <img :src="user_imgs[1]" />
     </div>
 
 
@@ -34,8 +36,12 @@
                 mstyle: "color:blue",
                 link: {
                     mhref: "http://vuejs.org",
-                    mtitle: "google"
-                }
+                    mtitle: "Vuejs"
+                },
+                user_imgs :
+                ["https://reqres.in/img/faces/1-image.jpg", 
+                 "https://reqres.in/img/faces/2-image.jpg"] ,
+                
             }
         });
     </script>

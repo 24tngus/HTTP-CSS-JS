@@ -24,6 +24,7 @@
             주소1:<input v-model="address" /><br>
             주소2(trim):<input v-model.trim="address" /><br>
             입력한 주소:{{address}}<br>
+            입력한 주소:{{address.length}}<br>
             <hr/>
             출생연도(lazy.number):<input v-model.lazy.number="year"><br>
             입력연도:{{year}}<br>
@@ -32,6 +33,10 @@
             배열2:<input type="checkbox" v-model="team" value="B">B<br>
             배열3:<input type="checkbox" v-model="team" value="C">C<br>
             선택한 배열:{{team}}
+
+            <hr/> 
+            <input type="checkbox" v-model="isFlag">user Image변경 <br/>
+            <img :src="isFlag?user_imgs[0]:user_imgs[1]" />
         </div>
     </div>
 
@@ -44,7 +49,11 @@
                 age: '',
                 address: '',
                 year: '',
-                team: []
+                team: [],
+                user_imgs :
+                ["https://reqres.in/img/faces/1-image.jpg", 
+                 "https://reqres.in/img/faces/2-image.jpg"],
+                isFlag: true 
             }
         });
     </script>

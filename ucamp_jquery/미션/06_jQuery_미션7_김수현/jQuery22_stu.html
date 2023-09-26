@@ -8,16 +8,32 @@
 <script type="text/javascript">
 
    $(document).ready(function() {
-		//구현
-		
- });
+		$("#one").click(function() {
+         var n1 = parseInt($("#v1").val());
+         var n2 = parseInt($("#v2").val());
+         $("#result").val(n1 + n2);
+      });
+      $("#quantity").change(function() {
+         var price = parseInt($("#price").val());
+         var count = parseInt($("#quantity option:selected").val());
+         $("#total").text(price * count);
+      });
+      $("#two").click(function() {
+         var total = 0;
+         $("input:checkbox[name=fruit]:checked").each(function() {
+            total += parseInt($(this).val());
+         })
+         $("#totalPrice").text(total);
+      });
+   });
 </script>
 </head>
 <body>
 <h3>1. + 연산</h3>
 <input type="text" name="v1" id="v1" value="10">+
 <input type="text" name="v2" id="v2" value="20">=
-<input type="text" name="result" id="result" value=""><button id="one">연산</button><br>
+<input type="text" name="result" id="result" value="">
+<button id="one">연산</button><br>
 <h3>2. 총합 구하기</h3>
 가격<input type="text" name="price" id="price" value="2500"> X
 수량<select id="quantity">

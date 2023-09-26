@@ -21,6 +21,7 @@
 
         6) 문자열_대문자함수:{{message.toUpperCase()}}<br>
         7) 문자열_소문자함수:{{message.toLowerCase()}}<br>
+        7-1) 문자열 대문자와 소문자 출력 함수:{{upper_lower_case()}}<br>
         8) 문자열_부분열함수:{{message.slice(0,3)}}<br>
         9) 문자열_치환함수:{{message.replace("Vue","vuex")}}<br>
         10) 수치_정수변환함수:{{Number.parseInt(height)}}<br>
@@ -36,6 +37,11 @@
                 phones: [100, 200, 300],
                 author: { name: "홍길동", age: 20 },
                 isMarried: true
+            }, // data
+            methods: {
+                upper_lower_case() {
+                    return this.message.toUpperCase() + ' || ' +this.message.toLowerCase()
+                }
             }
         });
     </script>

@@ -9,8 +9,12 @@
 
  $(document).ready(function() {
 
-		//구현
-
+		$("#a").click(function() {
+			window.close();
+		});
+		$("#b").click(function() {
+			opener.close();
+		});
 	});
 </script>
 </head>

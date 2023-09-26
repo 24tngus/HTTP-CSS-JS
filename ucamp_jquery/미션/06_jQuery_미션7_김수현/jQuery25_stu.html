@@ -4,27 +4,63 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript">
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script>
    
-    $(document).ready(function(){
-      /* 
-	   다음 url 활용하여 구현한다.
-       http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=3d430a039fb1bae3fe5f0bc48df64e46&targetDt=20120101
-	   */
-
-      //구현
+   $(document).ready(function(){
+    $("#req").on("click", function() {
+      var target_value = $("#targetDt").val();
+      var url = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=3d430a039fb1bae3fe5f0bc48df64e46&";
+      $.ajax({
+        type: "get",
+        url: url,
+        data: {
+          targetDt: target_value
+        },
+        dataType : "text",
+        success: function(responseData, status, xhr) {
+          $("#result").text(responseData);
+          response_target_list(responseData);
+        },
+        error: function(xhr, status, error) {
+          console.log(error);
+        }
+        })
+      });
     });
     
-
+function response_target_list(responseText) {
+  var table_header = `<tr>
+                <th>순위</th>
+                <th>제목</th>
+                <th>개봉일</th>
+                <th>상영횟수</th>
+              </tr>`;
+  $("#result").empty();
+  $("#result").append(table_header);
+  
+  var json_obj = JSON.parse(responseText);
+  var targetDataList = json_obj.boxOfficeResult.dailyBoxOfficeList;
+  
+  $.each(targetDataList, function(idx, targetData){
+    const {rank, movieNm, openDt, showCnt} = targetData;
+    
+    $('<tr>').append($('<td>').html(rank))
+             .append($('<td>').html(movieNm))
+	           .append($('<td>').html(openDt))	
+				     .append($('<td>').html(showCnt))
+             .appendTo('#result');
+    });
+}
 </script>
 </head>
 <body>
 <h1>박스오피스 순위</h1>
 <input type="text" name="targetDt" id="targetDt" placeholder="입력포맷:20230101">
 <button id="req">요청</button>
-<div id="result"></div>
-
+<table border="1">
+  <tbody id="result"></tbody>
+</table>
 </body>
 </html>
 

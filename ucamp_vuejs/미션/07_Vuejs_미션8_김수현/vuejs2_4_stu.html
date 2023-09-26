@@ -12,11 +12,15 @@
 <body>
     <div id="app">
         <h1>교재 정보</h1>
-        <div>
-           <!-- 구현 -->
+        <div v-for="(book, key) in bookList">
+            <input type="checkbox" :value="book" v-model="books"> {{book.name}} {{book.price}}
+            <button>삭제</button>
         </div>
         <hr>
         <button>선택삭제</button>
+        <div v-for="(selbook, idx) in books">
+            {{selbook.name}}
+        </div>
 
     </div>
 

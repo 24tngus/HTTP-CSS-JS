@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vuejs 디렉티브</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        .red-accent {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="select">
+        <label>팀 멤버를 선택하세요</label>
+        <div v-for="(team, idx) in teamList" v-bind:key="idx">
+            <input type="checkbox" :value="team" v-model="selectedTeams">
+            <label>{{team.name}} &nbsp; {{team.power}}</label>
+        </div>
+        <hr>
+        선택된 Team<br/>
+        <div v-for="(selTeam, idx) in selectedTeams" :key="idx">
+            {{selTeam.name}}
+        </div><br>
+        <strong>합계 {{sumofPower}}</strong>
+    </div>
+    
+    <script>
+        var select = new Vue({
+            el: '#select',
+            data: {
+                teamList : [
+                    {name:"아이언맨", power:100},
+                    {name:"토르", power:150},
+                    {name:"헐크", power:200}
+                ],
+                selectedTeams : [],
+                sumofPower : 0
+            },
+            watch: {
+                selectedTeams() {
+                    this.sumofPower = 0;
+                    this.selectedTeams.forEach(team => {
+                        console.log(team.name + " " + team.power);
+                        this.sumofPower += team.power;
+                    });
+                }
+            }
+        });
+        
+    </script>
+</body>
+
+</html>

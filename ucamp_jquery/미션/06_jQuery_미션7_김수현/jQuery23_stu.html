@@ -9,7 +9,13 @@
 
 $(document).ready(function() {
 	var sum = 0;
-	//구현
+	$("#sum").click(function() {
+		var total = 0;
+		$("li").each(function() {
+			total += parseInt($(this).text());
+		});
+		$("#result").text(total);
+	});
 });
 </script>
 </head>
