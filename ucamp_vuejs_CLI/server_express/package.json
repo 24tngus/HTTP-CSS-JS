@@ -1,0 +1,20 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "axios": "^1.5.1",
+    "cors": "^2.8.3",
+    "express": "^4.17.1",
+    "vue-axios": "^3.5.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.4"
+  },
+  "scripts": {
+    "start": "nodemon todo_post.js"
+  },
+  "author": "Lambda School",
+  "license": "ISC"
+}
