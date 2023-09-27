@@ -12,13 +12,16 @@
 <body>
     <div id="app">
         <h1>교재 정보</h1>
-        <div v-for="(book, idx) in bookList">
-            <input type="checkbox" :value="book" v-model="books"> {{book.name}} {{book.price}}
-            <button @click="deleteBook(idx)">삭제</button>
+        <div v-for="(book,idx) in bookList" :key="idx">
+            <input type="checkbox" v-model="books" :value="book">
+            {{book.name}}&nbsp;<span>{{book.price}}</span>
         </div>
         <hr>
-        <button @click="deleteBooks()">선택삭제</button>
-
+        선택교재:
+        <div v-for="(book,i) in books" :key="book.name">{{book.name}}</div>
+        <br>
+        합계:{{sum}}
+        <hr>
     </div>
 
     <script>
@@ -32,20 +35,17 @@
                     { name: "jQuery의 정석", price: 1000 },
                     { name: "Angular의 정석", price: 5000 }
                 ],
-                books: []
+                books: [],
+                sum: 0
             },
-            methods: {
-                deleteBook(index) {
-                    this.bookList.splice(index, 1);
-                },
-                deleteBooks() {
-                    for(let i = 0; i < this.books.length; i++) {
-                        var selected = this.books[i];
-
-                        var index = this.bookList.indexOf(selected);
-                        this.bookList.splice(index, 1);
-                    }
-                    this.books = [];
+            watch: {
+                books() {
+                    this.sum = 0;
+                    this.books.forEach(element => {
+                        console.log(this.sum)
+                        console.log(element, element.price);
+                        this.sum += element.price;
+                    });
                 }
             }
         });

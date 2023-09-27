@@ -12,12 +12,13 @@
 <body>
     <div id="app">
         <h1>교재 정보</h1>
-        <div v-for="(book, idx) in bookList">
-            <input type="checkbox" :value="book" v-model="books"> {{book.name}} {{book.price}}
-            <button @click="deleteBook(idx)">삭제</button>
+        <div v-for="(book,idx) in bookList" :key="idx">
+            <input type="checkbox" v-model="books" :value="book">
+            {{book.name}}&nbsp;<span>{{book.price}}</span>
+            <button @click="del(idx)">삭제</button>
         </div>
         <hr>
-        <button @click="deleteBooks()">선택삭제</button>
+        <button @click="delAll">선택삭제</button>
 
     </div>
 
@@ -35,17 +36,18 @@
                 books: []
             },
             methods: {
-                deleteBook(index) {
-                    this.bookList.splice(index, 1);
+                del(idx) {
+                    this.bookList.splice(idx, 1);
                 },
-                deleteBooks() {
-                    for(let i = 0; i < this.books.length; i++) {
-                        var selected = this.books[i];
-
-                        var index = this.bookList.indexOf(selected);
-                        this.bookList.splice(index, 1);
-                    }
-                    this.books = [];
+                delAll() {
+                    var xx = this.bookList;
+                    this.books.map(function (ele, idx) {
+                        xx.map(function (e, i) {
+                            if (e.name == ele.name) {
+                                xx.splice(i, 1);
+                            }
+                        })
+                    })
                 }
             }
         });
