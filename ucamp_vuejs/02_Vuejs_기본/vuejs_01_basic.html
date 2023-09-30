@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,21 +8,23 @@
     <!-- 개발버전, 도움되는 콘솔 경고를 포함. -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
-
 <body>
+    <!-- view -->
     <div id="app">
         {{ message }}
     </div>
-
-
-    <script>
+    <script> 
+      	// Model
+      	let model = {
+      		message : '안녕하세요 Vue!'
+      	};
+      	// ViewModel - Vue 객체
         var app = new Vue({
             el: '#app',
             data: {
-                message: '안녕하세요 Vue!'
+                message: model.message
             }
         });
     </script>
 </body>
-
 </html>

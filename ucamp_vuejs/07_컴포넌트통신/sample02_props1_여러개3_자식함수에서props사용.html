@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vuejs 기본 구조</title>
+    <title>Vuejs props 속성명</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
-
 <body>
     <div id="app">
         <!-- 전달할 데이터 키는 캐밥 표기법으로 지정-->
@@ -24,8 +22,6 @@
             {{xxx()}}
         </div>
     </template>
-
-
     <script>
         //자식
         const t1 = Vue.component('child-component', {
@@ -48,5 +44,4 @@
         });
     </script>
 </body>
-
 </html>

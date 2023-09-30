@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vuejs 기본 이벤트 처리 방지</title>
+    <title>Vuejs 기본 이벤트 처리 방지_이벤트 수식어 사용 전</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
-
 <body>
     <div id="app">
         <h2>preventDefault</h2>
@@ -26,7 +24,6 @@
         <h2>keyup.enter</h2>
         num1:<input type="text" @keyup="knum"><br>
     </div>
-
     <script>
         var app = new Vue({
             el: '#app',
@@ -61,5 +58,4 @@
         });
     </script>
 </body>
-
 </html>

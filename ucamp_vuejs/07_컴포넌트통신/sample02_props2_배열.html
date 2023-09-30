@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vuejs 기본 구조</title>
+    <title>Vuejs props 배열</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
-
 <body>
     <div id="app">
         <top1-component :lang-data="language"></top1-component>
@@ -21,7 +19,6 @@
             </ul>
         </div>
     </template>
-
     <script>
         //자식
         const t1 = Vue.component('top1-component', {
@@ -40,5 +37,4 @@
         });
     </script>
 </body>
-
 </html>

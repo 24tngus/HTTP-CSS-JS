@@ -5,13 +5,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>vuejs data종류</title>
     <!-- 개발버전, 도움되는 콘솔 경고를 포함. -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 
 <body>
     <div id="app">
+        <!-- data 종류 -->
+        message:{{ message }}<br>
+        age:{{ age }}<br>
+        phones:{{ phones[0] }}&nbsp;{{ phones}}<br>
+        author:{{ author.name }}&nbsp;{{author.age}}<br>
+        isMarried:{{ isMarried }}<br>
+        <hr>
         <!-- {{}}을 mustache(이중중괄호)라고 부른다.-->
         1) message:{{ message }}<br>
         2) age(산술연산):{{ age+1 }}<br>

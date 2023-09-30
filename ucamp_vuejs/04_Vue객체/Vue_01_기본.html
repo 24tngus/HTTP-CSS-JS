@@ -1,21 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>vue 객체</title>
     <!-- 개발버전, 도움되는 콘솔 경고를 포함. -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
-
 <body>
     <div id="app">
         {{ message }}
     </div>
-
-
     <script>
         var app = new Vue({
             el: '#app',
@@ -23,13 +19,11 @@
                 message: '안녕하세요 Vue!'
             }
         });
-
         console.log("Vue객체:", app)
         console.log("el접근:", app.$el)
         console.log("message 접근1:", app.$data.message)
         console.log("message 접근2:", app.message)
-
     </script>
 </body>
-
 </html>
+

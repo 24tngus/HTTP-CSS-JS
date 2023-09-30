@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vue객체의 methods 속성</title>
+    <title>vue 객체 watch/title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
-
 <body>
     <div id="app">
         <input type="number" v-model='v1'>+<input type="number" v-model='v2'>={{sum}}
     </div>
-
     <script>
         var app = new Vue({
             el: '#app',
@@ -37,14 +34,13 @@
                 }
             }
         });
-        /*
+        
          bookList = [
             {title: "java", price:100},
             {title: "java2", price:200},
             {title: "java3", price:300}
         ]
-         */
+         
     </script>
 </body>
-
 </html>

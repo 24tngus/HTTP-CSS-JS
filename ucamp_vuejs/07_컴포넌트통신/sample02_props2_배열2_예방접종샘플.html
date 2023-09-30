@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Welcome to Vue</title>
+    <title>Vuejs 배열 활용_예방접종 샘플</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </head>
-  
   <body>
     <div id="app">
       <h1>예방 접종 대상자</h1>
@@ -13,7 +12,6 @@
       <h3>2차 대상자</h3>
       <contact-component :contacts="list2"></contact-component>
     </div>
-
     <template id="contactTemplate">
       <table border="1">
         <tr>
@@ -30,7 +28,6 @@
         </tr>
       </table>
     </template>
-
     <script>
       const t1 = Vue.component("contact-component", {
         template: `#contactTemplate`,
@@ -57,6 +54,5 @@
         },
       });
     </script>
-
   </body>
 </html>

@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>directive v-model</title>
     <!-- 개발버전, 도움되는 콘솔 경고를 포함. -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
-
 <body>
     <div id="app">
         <div>
@@ -33,14 +31,11 @@
             배열2:<input type="checkbox" v-model="team" value="B">B<br>
             배열3:<input type="checkbox" v-model="team" value="C">C<br>
             선택한 배열:{{team}}
-
             <hr/> 
             <input type="checkbox" v-model="isFlag">user Image변경 <br/>
             <img :src="isFlag?user_imgs[0]:user_imgs[1]" />
         </div>
     </div>
-
-
     <script>
         var app = new Vue({
             el: '#app',
@@ -58,5 +53,4 @@
         });
     </script>
 </body>
-
 </html>

@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>전역 컴포넌트 사용 후 Data 사용</title>
     <!-- 개발버전, 도움되는 콘솔 경고를 포함. -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
-
 <body>
     <div id="app">
         <div>
@@ -17,17 +15,13 @@
             <hr>
             <list-component></list-component>
         </div>
-
     </div>
-
     <template id="list-template">
         <ul>
             <li v-for="value in hobby">{{value}}</li>
         </ul>
     </template>
-
     <script>
-
         // 컴포너트의 태그명은 일반적으로 케밥표기법을 선호한다.
         var search = Vue.component("search-component", {
             //template은 반드시 root태그 필수
@@ -38,7 +32,6 @@
                </div> 
             `
         });
-
         var list = Vue.component("list-component", {
             template: "#list-template",
             //data 사용 ==> 반드시 함수로 작성하고 리턴되는객체 사용
@@ -48,11 +41,9 @@
                 }
             }
         });
-
         var app = new Vue({
             el: '#app'
         });
     </script>
 </body>
-
 </html>

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +7,6 @@
     <title>Vuejs 이벤트 처리</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
-
 <body>
     <div id="app">
         현재 잔고: <span>{{balance}}</span><br/>
@@ -18,7 +16,6 @@
         <button @click="withdraw">출금1-콜백</button>
         <button @click="withdraw()">출금2-직접호출</button>
     </div>
-
     <script>
         var app = new Vue({
             el: '#app',
@@ -38,5 +35,4 @@
         });
     </script>
 </body>
-
 </html>
