@@ -16,7 +16,7 @@
             data: {
               page: page_value,
             },
-            dataType: "text",
+            dataType: "json", // json 변경 가능
             success: function (responseData, status, xhr) {
               // $("#result").text(responseData);
               response_user_list(responseData);
@@ -41,8 +41,9 @@
 		$("#usersList").append(table_header);
 
 		//text data => object
-		var json_obj = JSON.parse(responseText);
-		var userDataList = json_obj.data;
+		// var json_obj = JSON.parse(responseText); // json하면 parse 필요 없음
+		// var userDataList = json_obj.data;
+    var userDataList = responseText.data;
 
 		$.each(userDataList, function(idx, userData){
 			const {id, email, first_name, last_name, avatar } = userData;

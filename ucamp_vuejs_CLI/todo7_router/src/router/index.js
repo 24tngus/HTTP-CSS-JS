@@ -1,6 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+/* posts를 import */
+import PostList from '@/views/PostList.vue'
+import PostNew from '@/views/PostNew.vue'
+import PostDetail from '@/views/PostDetail.vue'
 
 Vue.use(VueRouter)
 
@@ -17,6 +21,14 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+  },
+  /* PostList, PostNew, PostDetail 추가 */
+  {
+    path: '/posts', component: PostList,
+    children: [
+      { path: 'new', component: PostNew },
+      { path: ':id', component: PostDetail, name: 'post' },
+    ]
   }
 ]
 

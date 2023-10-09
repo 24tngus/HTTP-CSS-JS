@@ -38,7 +38,7 @@ export default {
       */
   },
   computed: {
-    ...mapGetters(['getTodoItems'])
+    ...mapGetters(['getTodoItems'])   
     /* 전개 연산자(spread operator)를 사용하여 mapGetters 선언
     todoItems() {
       return this.$store.getters.getTodoItems;
